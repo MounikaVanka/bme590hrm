@@ -5,7 +5,7 @@ def test_hrm():
     @date: September 16, 2017
     @notes: Runs all tests of heart rate monitor project
     """
-
+'''
     def test_input():
         """
         @author: Tim Hoer
@@ -18,17 +18,26 @@ def test_hrm():
         assert(len(READ_INPUT) > 0)
         # assert that sampling rate is correctly deduced from input
         # import relevant functions and test output?
+'''
 
-    def test_output():
-        """
-        @author: Tim Hoer
-        @date: September 16, 2017
-        @notes: Ensures output file is formatted correctly.
-        """
-        # assert output file is 3 lines
-        with open('output.txt') as f:
-            assert(sum(1 for _ in f) == 3)
 
+def test_output():
+    """
+    @author: Tim Hoer
+    @date: September 16, 2017
+    @notes: Ensures output file is formatted correctly.
+    """
+    # assert output file is 3 lines and lines are as expected
+    from Code_1_3 import write_to_file
+    write_to_file(60, 75, "All good.")
+    with open('test.txt') as f:
+        lines = f.readlines()
+    lines = [x.strip() for x in lines]
+    assert(len(lines) == 3)
+    assert (lines[0] == "60")
+    assert (lines[1] == "75")
+    assert (lines[2] == "All good.")
+'''
     def test_case():
         """
         @author: Tim Hoer
@@ -54,12 +63,12 @@ def test_hrm():
         # assert program raises exception if input file is not "ecg_data.csv"
         with pytest.raises(ZeroDivisionError):
                 wrapper.py('not_ecg_data.csv')
+'''
 
-
-    test_input()
-    test_output()
-    test_case()
-    test_handling()
+    # test_input()
+test_output()
+    # test_case()
+    # test_handling()
 
 
 if __name__ == '__main__':
