@@ -21,7 +21,7 @@ def test_hrm():
 '''
 
 
-def test_output():
+def test_write_to_file():
     """
     @author: Tim Hoer
     @date: September 16, 2017
@@ -37,6 +37,18 @@ def test_output():
     assert (lines[0] == "60")
     assert (lines[1] == "75")
     assert (lines[2] == "All good.")
+
+
+def test_Checking_Threshold():
+    """
+    @author: Tim Hoer
+    @date: September 16, 2017
+    @notes: Tests for proper heart rate classfication.
+    """
+    from Code_1_2 import Checking_Threshold
+    assert(Checking_Threshold(60,100,72)=="Normal Heart Rate")
+    assert (Checking_Threshold(60,100,55) == "Bradycardia")
+    assert (Checking_Threshold(60,100,110) == "Tachycardia")
 '''
     def test_case():
         """
@@ -66,7 +78,8 @@ def test_output():
 '''
 
     # test_input()
-test_output()
+test_write_to_file()
+test_Checking_Threshold()
     # test_case()
     # test_handling()
 
