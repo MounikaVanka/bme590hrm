@@ -5,6 +5,7 @@ import numpy as np
 
 def Checking_Threshold(a,b,avg_heart_rate):
 
+
     """checking for Tachycardia or Bradycardia
 
 
@@ -13,6 +14,8 @@ def Checking_Threshold(a,b,avg_heart_rate):
     :param avg_heart_rate: int, bmp
     :return: The condition string
     """
+
+    
     
     global output
     
@@ -23,24 +26,23 @@ def Checking_Threshold(a,b,avg_heart_rate):
         return output
 
 
-    elif(avg_heart_rate >= b):
+  elif(avg_heart_rate >= b):
         output="Tachycardia"
         print(output)
         return output 
+      
     elif(avg_heart_rate > a and avg_heart_rate < b):
         output="Normal Heart Rate"
         print (output)
         return output
 
-a = int(input("Enter the Bradycardia Threshold"))
-b = int(input("Enter the Tachycardia Threshold"))
-Checking_Threshold(a, b)
-
-# if _name_ == '_main_':
 
 #a=int(input("Enter the Bradycardia Threshold"))
 #b=int(input("Enter the Tachycardia Threshold"))
 #avg_heart_rate=72
 #Checking_Threshold(a,b,avg_heart_rate)
 
+
+
+#if _name_ == '_main_':
 

@@ -1,23 +1,34 @@
 import csv
 
 with open('ecg_data.csv') as csvfile:
-    readCSV = csv.reader(csvfile,delimiter=',')
-    header_line=next(readCSV)
 
-    times=[]
-    Voltages=[]
+    """Opens the ecg CSV file
+    
+    
+    :param readCSV: pointer to the file
+    :param times: the time from the signal
+    :param Voltage: the voltage from the signal
+
+    """
+
+    readCSV = csv.reader(csvfile, delimiter=',')
+    header_line = next(readCSV)
+
+    time = []
+    Voltage = []
+
 
 
 
     for row in readCSV:
-        time=row[0]
-        Voltage=row[1]
+        time1 = row[0]
+        Voltage1 = row[1]
 
 
-        times.append(time)
-        Voltages.append(Voltage)
+        times.append(time1)
+        Voltages.append(Voltage1)
 
 
-print(times)
-print(Voltages)
-print(header_line)
+print(time)
+print(Voltage)
+

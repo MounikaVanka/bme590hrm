@@ -1,5 +1,7 @@
 import numpy as np
 import scipy.signal
+import Code_1.py
+
 
 
 def calc_inst_hr(time, voltage):
@@ -10,16 +12,18 @@ def calc_inst_hr(time, voltage):
     :return: heart rate in bpm
     """
 
+
     # indices = peakutils.indexes(voltage, thres = 0.95*np.max(voltage), min_dist = 1000)
+    indices = scipy.signal.find_peaks_cwt(voltage, np.arange(1, 200))
 
-    fs = 1 / (time[1] - time[0])
+    # TODO: make min dist (or np.arange) relate to sampling rate. right now just placeholder parameters
 
-    rates = np.arange(40, 200, 20) / 60
-    peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates / 10)
-
+    r_peaks = time(indices)
     # just take first two peaks to get instantaneous. not that accurate obviously, could give more control
-    beat_diff = time[peaks[1]] - time[peaks[0]] # seconds per beat
-    bpm = 1 / beat_diff * 60 # beats per minute
+    beat_diff = r_peaks[1] - r_peaks[0]
+
+    bpm = beat_diff / 60
+
 
     return bpm
 
