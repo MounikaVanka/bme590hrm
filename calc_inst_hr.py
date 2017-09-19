@@ -3,6 +3,7 @@ import scipy.signal
 import Code_1.py
 
 
+
 def calc_inst_hr(time, voltage):
     """ calculate instantaneous HR from ECG data input
 
@@ -23,7 +24,9 @@ def calc_inst_hr(time, voltage):
 
     bpm = beat_diff / 60
 
+
     return bpm
 
 
 # if __name__ == '__main__':
+

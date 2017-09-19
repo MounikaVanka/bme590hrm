@@ -1,6 +1,7 @@
 import csv
 
 with open('ecg_data.csv') as csvfile:
+
     """Opens the ecg CSV file
     
     
@@ -18,6 +19,7 @@ with open('ecg_data.csv') as csvfile:
 
 
 
+
     for row in readCSV:
         time1 = row[0]
         Voltage1 = row[1]
@@ -29,4 +31,4 @@ with open('ecg_data.csv') as csvfile:
 
 print(time)
 print(Voltage)
-print(header_line)
+
