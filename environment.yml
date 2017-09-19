@@ -1,8 +1,6 @@
-name: hrm
+name: ci-test
 dependencies:
-  - python=3.6
-  - numpy
-  - ipython
-  - pytest
-  - pytest-cov
-  - pytest-pep8
+        - python=3.6
+        - numpy
+        - pytest
+
