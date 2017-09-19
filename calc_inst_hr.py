@@ -1,5 +1,7 @@
 import numpy as np
 import scipy.signal
+import Code_1.py
+
 
 def calc_inst_hr(time, voltage):
     """ calculate instantaneous HR from ECG data input
