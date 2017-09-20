@@ -25,8 +25,7 @@ def Checking_Threshold(a,b,avg_heart_rate):
         print(output)
         return output
 
-
-  elif(avg_heart_rate >= b):
+    elif(avg_heart_rate >= b):
         output="Tachycardia"
         print(output)
         return output 
