@@ -1,4 +1,4 @@
-name: Environment_hrm
+name: hrm
 dependencies:
         - numpy
         - csvkit
@@ -6,3 +6,4 @@ dependencies:
         - pytest
         - pytest-cov
         - pytest-pep8
+        - scipy
