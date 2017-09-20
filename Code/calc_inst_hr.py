@@ -1,7 +1,5 @@
 import numpy as np
 import scipy.signal
-import Code_1.py
-
 
 
 def calc_inst_hr(time, voltage):
@@ -13,10 +11,20 @@ def calc_inst_hr(time, voltage):
     """
 
 
+<<<<<<< HEAD:Code/calc_inst_hr.py
+    # get sampling rate
+    fs = 1 / (time[1] - time[0])
+
+    # choose HRs to search for
+    rates = np.arange(40, 200, 20) / 60
+    # find peaks. factor of 10 set kind of arbitrarily
+    peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates / 10)
+=======
     # indices = peakutils.indexes(voltage, thres = 0.95*np.max(voltage), min_dist = 1000)
     indices = scipy.signal.find_peaks_cwt(voltage, np.arange(1, 200))
 
     # TODO: make min dist (or np.arange) relate to sampling rate. right now just placeholder parameters
+>>>>>>> tim:calc_inst_hr.py
 
     r_peaks = time(indices)
     # just take first two peaks to get instantaneous. not that accurate obviously, could give more control
