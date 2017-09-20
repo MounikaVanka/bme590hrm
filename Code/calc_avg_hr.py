@@ -12,9 +12,13 @@ def calc_avg_hr(time, voltage):
 
     # indices = peakutils.indexes(voltage, thres = 0.95*np.max(voltage), min_dist = 1000)
 
+    # get sample rate
     fs = 1 / (time[1] - time[0])
 
+    # choose peaks to search for
     rates = np.arange(40, 200, 20) / 60
+    # get peaks. factor of 10 is arbitrary right now
+    
     peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates / 10)
 
     # calling average HR the avg over whole time period
