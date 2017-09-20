@@ -46,9 +46,23 @@ def test_Checking_Threshold():
     @notes: Tests for proper heart rate classfication.
     """
     from Code_1_2 import Checking_Threshold
-    assert(Checking_Threshold(60,100,72)=="Normal Heart Rate")
-    assert (Checking_Threshold(60,100,55) == "Bradycardia")
-    assert (Checking_Threshold(60,100,110) == "Tachycardia")
+    assert(Checking_Threshold(60, 100, 72)== "Normal Heart Rate")
+    assert (Checking_Threshold(60, 100, 55) == "Bradycardia")
+    assert (Checking_Threshold(60, 100, 110) == "Tachycardia")
+
+
+def test_calc_inst_hr():
+    """
+    @author: Tim Hoer
+    @date: September 16, 2017
+    @notes: Tests for proper heart rate classfication.
+    """
+    from calc_inst_hr import calc_inst_hr
+    import numpy as np
+    time = np.array([])
+    voltage = np.array([])
+
+
 '''
     def test_case():
         """
