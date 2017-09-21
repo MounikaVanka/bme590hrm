@@ -1,8 +1,0 @@
-name: Environment_hrm
-dependencies:
-        - numpy
-        - csvkit
-        - ipython
-        - pytest
-        - pytest-cov
-        - pytest-pep8
