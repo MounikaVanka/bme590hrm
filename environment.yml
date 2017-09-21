@@ -1,9 +1,0 @@
-name: hrm
-dependencies:
-  - python=3.6
-  - numpy
-  - ipython
-  - scipy
-  - pytest
-  - pytest-cov
-  - pytest-pep8
