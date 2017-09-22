@@ -28,7 +28,7 @@ Credits
 * Suyash Kumar
 * Arjun Desai
 
-Team Memebrs:
+Team Memebers:
 ======
 + Caleb Willis
 + Time Hoer 
