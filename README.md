@@ -21,6 +21,12 @@ The inputs required from the User are:
 3. The sample window for which the average hreat rate is to be estimated
 4. The sample window for the instantaneous heart rate
 
+Team Members:
+======
++ Caleb Willis
++ Time Hoer 
++ Mounika Vanka
+
 
 Credits
 =======
@@ -28,8 +34,4 @@ Credits
 * Suyash Kumar
 * Arjun Desai
 
-Team Memebers:
-======
-+ Caleb Willis
-+ Time Hoer 
-+ Mounika Vanka
+
