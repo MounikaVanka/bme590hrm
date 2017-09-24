@@ -37,14 +37,15 @@ def read_in():
     return (time,voltage)
 
 read_in()
-print(time)
-print(voltage)
-print(type(time))
-print(type(voltage))
-
 for element in time:
     parts=element.split(',')
     print(parts)
 
-abc=numpy.asarray(parts)
-print(abc)
+Time=numpy.asarray(parts,'Float64')
+print(Time)
+for element in voltage:
+    parts1=element.split(',')
+    print(parts1)
+Voltage=numpy.asarray(parts1,'Float64')
+print(Voltage)
+print(numpy.ndarray.size(Voltage))
