@@ -34,7 +34,7 @@ def test_checking_threshold():
     """
     :Author: Tim Hoer
     :Date: September 16, 2017
-    "Notes: Tests for proper heart rate classfication.
+    :Notes: Tests for proper heart rate classfication.
     """
     from Checking_threshold import checking_threshold
     assert(checking_threshold(60, 100, 72) == "Normal Heart Rate")

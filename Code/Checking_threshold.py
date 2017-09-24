@@ -3,7 +3,7 @@ def checking_threshold(a, b, avg_heart_rate):
     """checking for Tachycardia or Bradycardia
     :param a: int variable, lower bound bpm
     :param b: int variable, upper bound bpm
-    :param avg_heart_rate: int, bmp
+    :param avg_heart_rate: int, bpm
     :return: The condition string
     """
 

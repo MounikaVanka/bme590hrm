@@ -2,8 +2,8 @@ import sys
 
 
 def write_to_file(a, b, c):
-    """ Writes the output to a separate file
-
+    """
+    Writes the output to a separate file
     :param a: instantaneous heart rate
     :param b: avg_heart_rate
     :param c: output string
