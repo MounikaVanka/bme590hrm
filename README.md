@@ -33,6 +33,10 @@ The output average HR will be reported from the first user specified window in t
 
 The ECG condition will be either Bradycardia, Tachycardia, or Normal Heart Rate. Bradycardia or Tachycardia will be indicated if the average heart rate over any user specified window is below or above threshold, respectively. 
 
+Unit Testing
+=========
+Unit testing is performed using py.test by running test_hrm.py.
+
 Team Members:
 ======
 + Caleb Willis
