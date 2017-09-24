@@ -17,7 +17,7 @@ def calc_avg_hr(time, voltage, window):
     fs = 1 / (time[1] - time[0])
 
     # search width
-    rates = np.array([voltage.size()/50])
+    rates = np.array([np.size(voltage)/50])
 
     # get peaks.
     peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)

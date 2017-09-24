@@ -24,7 +24,7 @@ def read_in():
 
     return time, voltage
 
-
+'''
 read_in()
 for element in time:
     parts=element.split(',')
@@ -41,4 +41,4 @@ print(Voltage)
 print(numpy.ndarray.size(Voltage))
 abc=numpy.asarray(parts)
 print(abc)
-
+'''

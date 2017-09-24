@@ -47,26 +47,28 @@ def test_calc_inst_hr():
     """
     :Author: Tim Hoer
     :Date: September 16, 2017
-    :Notes: Tests for proper heart rate classfication.
+    :Notes: Tests for instantaneous HR calculation within 10% of accepted.
     """
     from calc_inst_hr import calc_inst_hr
     import numpy as np
     time = np.loadtxt('time.txt', delimiter=',')
     voltage = np.loadtxt('voltage.txt', delimiter=',')
-    assert(calc_inst_hr(time, voltage) == 62)
+    output = calc_inst_hr(time, voltage)
+    assert(.9*62 < output < 1.1*62)
 
 
 def test_calc_avg_hr():
     """
     :Author: Tim Hoer
     :Date: September 16, 2017
-    :Notes: Tests for proper heart rate classfication.
+    :Notes: Tests for average HR calculation within 10% of accepted.
     """
     from calc_avg_hr import calc_avg_hr
     import numpy as np
     time = np.loadtxt('time.txt', delimiter=',')
     voltage = np.loadtxt('voltage.txt', delimiter=',')
-    assert(calc_avg_hr(time, voltage) == 62)
+    output = calc_avg_hr(time, voltage, 60)
+    assert(.9*62 < output[0] < 1.1*62)
 
 
 '''
