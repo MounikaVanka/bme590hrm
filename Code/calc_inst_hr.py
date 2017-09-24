@@ -18,7 +18,7 @@ def calc_inst_hr(time, voltage):
     # choose HRs to search for
     # rates = np.arange(40, 200, 20) / 60
 
-    rates = np.array([10])  # set to look in chunks of 10
+    rates = np.array([voltage.size()/50])  # search width
     # find peaks
     peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
