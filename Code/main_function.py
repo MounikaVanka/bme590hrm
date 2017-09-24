@@ -14,7 +14,10 @@ def main():
     """
     
     # Gets the input file named ecg_data.csv
-    [time, voltage] = read_in()
+    output = read_in()
+    time = output[0]
+    voltage = output[1]
+    print(time)
 
     # Calculates the Instantaneous Heart Rate
     bpm_inst_hr = calc_inst_hr(time, voltage)
