@@ -147,5 +147,5 @@ end
  ecg=pwav+qrswav+twav+swav+qwav+uwav;
  figure(1)
  plot(x,ecg);
- dlmwrite('time60.txt',x)
- dlmwrite('voltage60.txt',ecg)
+ ecg_data = [x' ecg'];
+ csvwrite('ecg_data.csv',ecg_data)
