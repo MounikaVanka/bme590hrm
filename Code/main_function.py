@@ -17,19 +17,23 @@ def main():
     output = read_in()
     time = output[0]
     voltage = output[1]
-    print(time)
+
 
     # Calculates the Instantaneous Heart Rate
     bpm_inst_hr = calc_inst_hr(time, voltage)
 
     # Calculates the Average Heart Rate
-    bpm_avg_hr = calc_avg_hr(time, voltage, window=input("Enter the window time in seconds"))
+    window = input("Enter the window time in seconds: ")
+    window = int(window)
+    bpm_avg_hr = calc_avg_hr(time, voltage, window)
 
-    a = input("Enter the Bradycardia threshold")
-    b = input("Enter the Tachycardia threshold")
+    a = input("Enter the Bradycardia threshold: ")
+    b = input("Enter the Tachycardia threshold: ")
 
     a = int(a)
     b = int(b)
+
+    # loop here
     
     # Checks the Threshold
     threshold = checking_threshold(a, b, bpm_avg_hr)
