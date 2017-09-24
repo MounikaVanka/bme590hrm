@@ -8,8 +8,9 @@ def test_read_in():
     # import script that reads
     from Input_csv_file import read_in
     (time, voltage) = read_in()
-    # check imported list is the right length
-    assert(len(time) == 3114)
+    # check that lists are created
+    assert(isinstance(time, list) is True)
+    assert (isinstance(voltage, list) is True)
 
 
 def test_write_to_file():
