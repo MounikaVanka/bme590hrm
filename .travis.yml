@@ -9,9 +9,10 @@ install:
         - hash -r
         - conda config --set always_yes yes --set changeps1 no
         - conda update conda -q
-        - conda env create -f environment.yml
+        - conda env create -f ./environment/environment.yml
         - source activate ci-test
 
 script:
+        - cd ./Code/
         - py.test
 
