@@ -8,7 +8,7 @@ LICENSE.md ( MIT License)
 
 The Travis Badge is:
 =========
-[![Build Status](https://travis-ci.org/buonzz/laravel-4-freegeoip.svg?branch=master)](https://travis-ci.org/MounikaVanka/bme590hrm.svg?branch=master)
+[![Build Status](https://travis-ci.org/MounikaVanka/bme590hrm.svg?branch=master)](https://travis-ci.org/MounikaVanka/bme590hrm)
 
 Starting the Program
 =========
