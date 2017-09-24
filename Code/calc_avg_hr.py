@@ -17,7 +17,7 @@ def calc_avg_hr(time, voltage, window):
     fs = 1 / (time[1] - time[0])
 
     # search width
-    rates = np.array([np.size(voltage)/50])
+    rates = np.array([np.size(voltage)/200])
 
     # get peaks.
     peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
@@ -32,9 +32,6 @@ def calc_avg_hr(time, voltage, window):
             print(keep_peaks)
 
     keep_peaks = keep_peaks.astype(int)
-
-    # calling average HR the avg over whole time period
-    # TODO: give control in function input parameter
 
     wind = np.array([])
     bpm = np.array([])
