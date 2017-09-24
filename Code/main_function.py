@@ -17,7 +17,7 @@ def main():
     output = read_in()
     time = output[0]
     voltage = output[1]
-
+    
 
     # Calculates the Instantaneous Heart Rate
     bpm_inst_hr = calc_inst_hr(time, voltage)
@@ -36,7 +36,10 @@ def main():
     # loop here
     
     # Checks the Threshold
-    threshold = checking_threshold(a, b, bpm_avg_hr)
+    
+    for row in bpm_avg_hr: 
+        threshold[row] = checking_threshold(a, b, bpm_avg_hr[row])
+    return threshold
 
     # Writes to output file
     write_to_file(bpm_inst_hr, bpm_avg_hr[0], threshold)
