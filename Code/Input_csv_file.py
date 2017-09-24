@@ -30,7 +30,7 @@ for element in time:
     parts=element.split(',')
     print(parts)
 
-<<<<<<< HEAD
+
 Time=numpy.asarray(parts,'Float64')
 print(Time)
 for element in voltage:
