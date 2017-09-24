@@ -6,11 +6,12 @@ def test_read_in():
     :Notes: Ensures input file is read correctly.
     """
     # import script that reads
+    import numpy
     from Input_csv_file import read_in
     (time, voltage) = read_in()
     # check that lists are created
-    assert(isinstance(time, list) is True)
-    assert (isinstance(voltage, list) is True)
+    assert(isinstance(time, numpy.ndarray) is True)
+    assert (isinstance(voltage, numpy.ndarray) is True)
 
 
 def test_write_to_file():
