@@ -15,10 +15,8 @@ def calc_inst_hr(time, voltage):
     # get sampling rate
     fs = 1 / (time[1] - time[0])
 
-    # choose HRs to search for
-    # rates = np.arange(40, 200, 20) / 60
 
-    rates = np.array([np.size(voltage)/50])  # search width
+    rates = np.array([np.size(voltage)/200])  # search width
     # find peaks
     peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
@@ -31,7 +29,7 @@ def calc_inst_hr(time, voltage):
 
     keep_peaks = keep_peaks.astype(int)
 
-    # just take first two peaks to get instantaneous. not that accurate obviously, could give more control
+    # just take last two peaks to get instantaneous. not that accurate obviously
     beat_diff = time[keep_peaks[1]] - time[keep_peaks[0]] # seconds per beat
     bpm = 1 / beat_diff * 60 # beats per minute
 
