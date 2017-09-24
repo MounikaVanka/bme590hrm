@@ -1,4 +1,4 @@
-x=0.001:0.001:10;
+x=0.001:0.001:60;
 default=input('Press 1 if u want default ecg signal else press 2:\n'); 
 if(default==1)
       li=30/72;  
@@ -147,5 +147,5 @@ end
  ecg=pwav+qrswav+twav+swav+qwav+uwav;
  figure(1)
  plot(x,ecg);
- dlmwrite('time.txt',x)
- dlmwrite('voltage.txt',ecg)
+ dlmwrite('time60.txt',x)
+ dlmwrite('voltage60.txt',ecg)
