@@ -1,30 +1,24 @@
-import numpy as np
 
-# from cal_inst_hr import *
-
-
-
-def Checking_Threshold(a, b, avg_heart_rate):
+def checking_threshold(a, b, avg_heart_rate):
     """checking for Tachycardia or Bradycardia
-    :param Threshold: int variable, bmp
+    :param a: int variable, lower bound bpm
+    :param b: int variable, upper bound bpm
     :param avg_heart_rate: int, bmp
     :return: The condition string
     """
 
-    global output
-
     # Checks if the the heart rate is lesser or greater than the threshold
-    if (avg_heart_rate <= a):
+    if avg_heart_rate <= a:
         output = "Bradycardia"
         print(output)
         return output
 
-    elif (avg_heart_rate >= b):
+    elif avg_heart_rate >= b:
         output = "Tachycardia"
         print(output)
         return output
 
-    elif (avg_heart_rate > a and avg_heart_rate < b):
+    else:
         output = "Normal Heart Rate"
         print (output)
         return output
@@ -34,7 +28,4 @@ def Checking_Threshold(a, b, avg_heart_rate):
 # avg_heart_rate=72
 # Checking_Threshold(a,b,avg_heart_rate)
 
-
-
-# if _name_ == '_main_':
 

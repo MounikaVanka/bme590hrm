@@ -38,13 +38,13 @@ def test_write_to_file():
     assert (lines[2] == "All good.")
 
 
-def test_Checking_Threshold():
+def test_checking_threshold():
     """
     @author: Tim Hoer
     @date: September 16, 2017
     @notes: Tests for proper heart rate classfication.
     """
-    from Checking_threshold import Checking_Threshold
+    from Checking_threshold import checking_threshold
     assert(Checking_Threshold(60, 100, 72)== "Normal Heart Rate")
     assert (Checking_Threshold(60, 100, 55) == "Bradycardia")
     assert (Checking_Threshold(60, 100, 110) == "Tachycardia")
