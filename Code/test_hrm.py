@@ -14,7 +14,7 @@ def test_read_in():
     @notes: Ensures input file is read correctly.
     """
     # import script that reads
-    from Code_1 import read_in
+    from Input_csv_file import read_in
     (time, voltage) = read_in()
     # check imported list is the right length
     assert(len(time) == 3114)
@@ -27,7 +27,7 @@ def test_write_to_file():
     @notes: Ensures output file is formatted correctly.
     """
     # assert output file is 3 lines and lines are as expected
-    from Code_1_3 import write_to_file
+    from Write_output_file import write_to_file
     write_to_file(60, 75, "All good.")
     with open('test.txt') as f:
         lines = f.readlines()
@@ -44,7 +44,7 @@ def test_Checking_Threshold():
     @date: September 16, 2017
     @notes: Tests for proper heart rate classfication.
     """
-    from Code_1_2 import Checking_Threshold
+    from Checking_threshold import Checking_Threshold
     assert(Checking_Threshold(60, 100, 72)== "Normal Heart Rate")
     assert (Checking_Threshold(60, 100, 55) == "Bradycardia")
     assert (Checking_Threshold(60, 100, 110) == "Tachycardia")
@@ -102,13 +102,3 @@ def test_calc_avg_hr():
         with pytest.raises(ZeroDivisionError):
                 wrapper.py('not_ecg_data.csv')
 '''
-
-    # test_input()
-test_write_to_file()
-test_Checking_Threshold()
-    # test_case()
-    # test_handling()
-
-
-if __name__ == '__main__':
-    test_hrm()
