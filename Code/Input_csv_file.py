@@ -1,6 +1,7 @@
 
 def read_in():
     import csv
+    import numpy
 
     with open('ecg_data.csv') as csvfile:
         """
@@ -22,23 +23,17 @@ def read_in():
             time.append(time1)
             voltage.append(voltage1)
 
-    return time, voltage
 
+
+    for element in time:
+        parts=element.split(',')
+    Time=numpy.asarray(parts,'Float64')
+    
+    for element in voltage:
+        parts1=element.split(',')
+    Voltage=numpy.asarray(parts1,'Float64')
+    return Time,Voltage
 '''
 read_in()
-for element in time:
-    parts=element.split(',')
-    print(parts)
 
-
-Time=numpy.asarray(parts,'Float64')
-print(Time)
-for element in voltage:
-    parts1=element.split(',')
-    print(parts1)
-Voltage=numpy.asarray(parts1,'Float64')
-print(Voltage)
-print(numpy.ndarray.size(Voltage))
-abc=numpy.asarray(parts)
-print(abc)
 '''
