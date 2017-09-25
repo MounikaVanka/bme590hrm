@@ -19,7 +19,7 @@ Requirements:
 Python 3.6
 
 The inputs required from the user are:
-1. ECG data file in .csv format in a file named 'ecg_data.csv' in the Code folder
+1. ECG data file in .csv format in a file named 'ecg_data.csv' in the Code folder with the time and Voltage in numerical format
 2. The HR threshold in bpm for bradycardia and tachycardia
 3. The sample window in minutes for which the average heart rate is to be estimated
 
