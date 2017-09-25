@@ -17,4 +17,3 @@ def write_to_file(a, b, c):
           '\n', 'The condition for each window is', threshold)
     sys.stdout.close()
     sys.stdout = prev
-
