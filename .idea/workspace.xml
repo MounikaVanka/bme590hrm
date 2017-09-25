@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22d715e1-ab1e-498f-8ffa-4409a1f4924d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Code/test.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/.cache/v/cache/lastfailed" afterPath="$PROJECT_DIR$/Code/.cache/v/cache/lastfailed" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/Checking_threshold.py" afterPath="$PROJECT_DIR$/Code/Checking_threshold.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/Input_csv_file.py" afterPath="$PROJECT_DIR$/Code/Input_csv_file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/Write_output_file.py" afterPath="$PROJECT_DIR$/Code/Write_output_file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/calc_avg_hr.py" afterPath="$PROJECT_DIR$/Code/calc_avg_hr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/calc_inst_hr.py" afterPath="$PROJECT_DIR$/Code/calc_inst_hr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/main_function.py" afterPath="$PROJECT_DIR$/Code/main_function.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/test_hrm.py" afterPath="$PROJECT_DIR$/Code/test_hrm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="test_hrm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_hrm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/test_hrm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2015">
@@ -79,8 +71,18 @@
       <file leaf-file-name="Write_output_file.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Write_output_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -98,9 +100,10 @@
         <option value="$PROJECT_DIR$/Code/Checking_threshold.py" />
         <option value="$PROJECT_DIR$/Code/calc_inst_hr.py" />
         <option value="$PROJECT_DIR$/Code/calc_avg_hr.py" />
-        <option value="$PROJECT_DIR$/Code/Write_output_file.py" />
         <option value="$PROJECT_DIR$/Code/main_function.py" />
         <option value="$PROJECT_DIR$/Code/test_hrm.py" />
+        <option value="$PROJECT_DIR$/Code/Write_output_file.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -465,13 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environment/environment.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -512,14 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Write_output_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Code/main_function.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -532,6 +520,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2015">
           <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Write_output_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding />
         </state>
       </provider>
