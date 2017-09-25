@@ -46,7 +46,7 @@ def main():
 
     # Writes to output file
     write_to_file(bpm_inst_hr, bpm_avg_hr[0], threshold1)
-    print(bpm_inst_hr,bpm_avg_hr[0],threshold1)
+    print('Instantaneous Heart Rate is:',bpm_inst_hr,'\n','Average Heart Rate is:',bpm_avg_hr[0],'\n','The threshold for each window is',threshold1)
     
 if __name__ == '__main__':
     main()
