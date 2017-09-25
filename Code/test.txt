@@ -1,3 +1,0 @@
-34 
- 42 
- ['Normal Heart Rate' 'Normal Heart Rate' 'Normal Heart Rate']

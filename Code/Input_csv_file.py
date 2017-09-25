@@ -27,9 +27,9 @@ def read_in():
 
     dat = numpy.genfromtxt('ecg_data1.csv', delimiter=',', skip_header= 2, )
 
-    time = dat[:,0]
-    voltage = dat[:,1]
-    #for element in time:
+    time = dat[:, 0]
+    voltage = dat[:, 1]
+    # for element in time:
     #     #parts=element.split(',')
     # time = tim.astype('Float64')
     # time.astype()

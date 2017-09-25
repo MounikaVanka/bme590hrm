@@ -18,7 +18,6 @@ def main():
     output = read_in()
     time = output[0]
     voltage = output[1]
-    
 
     # Calculates the Instantaneous Heart Rate
     bpm_inst_hr = calc_inst_hr(time, voltage)
@@ -41,12 +40,13 @@ def main():
     threshold1 = np.array([])
     for row in bpm_avg_hr: 
         threshold = checking_threshold(a, b, row)
-        threshold1 = np.append(threshold1,threshold) 
-        
+        threshold1 = np.append(threshold1, threshold)
 
     # Writes to output file
     write_to_file(bpm_inst_hr, bpm_avg_hr[0], threshold1)
-    print('Instantaneous Heart Rate is:',bpm_inst_hr,'\n','Average Heart Rate is:',bpm_avg_hr[0],'\n','The threshold for each window is',threshold1)
-    
+    print('Instantaneous Heart Rate is:', bpm_inst_hr, '\n', 'Average Heart Rate is:', bpm_avg_hr[0], '\n',
+          'The condition for each window is', threshold1)
+
+
 if __name__ == '__main__':
     main()
