@@ -3,6 +3,7 @@ from calc_avg_hr import *
 from calc_inst_hr import *
 from Checking_threshold import *
 from Write_output_file import *
+import numpy as np
 
 
 def main():
@@ -36,14 +37,16 @@ def main():
     # loop here
     
     # Checks the Threshold
-    
+ 
+    threshold1 = np.array([])
     for row in bpm_avg_hr: 
-        threshold[row] = checking_threshold(a, b, bpm_avg_hr[row])
-    return threshold
+        threshold = checking_threshold(a, b, row)
+        threshold1 = np.append(threshold1,threshold) 
+    return threshold    
 
     # Writes to output file
     write_to_file(bpm_inst_hr, bpm_avg_hr[0], threshold)
-
+    print(bpm_inst_hr,bpm_avg_hr[0],threshold)
 
 if __name__ == '__main__':
     main()

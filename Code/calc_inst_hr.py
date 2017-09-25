@@ -2,6 +2,7 @@ import numpy as np
 import scipy.signal
 
 
+
 def calc_inst_hr(time, voltage):
     """ calculate instantaneous HR from ECG data input
 
@@ -31,9 +32,9 @@ def calc_inst_hr(time, voltage):
 
     # just take last two peaks to get instantaneous. not that accurate obviously
     beat_diff = time[keep_peaks[1]] - time[keep_peaks[0]] # seconds per beat
-    bpm = 1 / beat_diff * 60 # beats per minute
+    bpm = int(1 / beat_diff * 60) # beats per minute
+    
 
     return bpm
-
 
 
