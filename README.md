@@ -32,6 +32,8 @@ The output instantaneous HR will be reported from the first RR interval in the i
 The output average HR will be reported from the first user specified window in the input data. If the window is longer than the amount of data in ecg_data.csv, the output will be the average over all the available data.
 
 The ECG condition will be either Bradycardia, Tachycardia, or Normal Heart Rate. The condition will be indicated for every average heart rate window.
+
+
 Unit Testing
 =========
 Unit testing is performed using py.test by running test_hrm.py.
