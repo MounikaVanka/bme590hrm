@@ -25,10 +25,10 @@ def read_in():
     #         # time = numpy.append(time, time1)
     #         # voltage = numpy.append(voltage, voltage1)
 
-    dat = numpy.genfromtxt('ecg_data1.csv', delimiter=',', skip_header=2, )
+    dat = numpy.genfromtxt('ecg_data1.csv', delimiter=',', skip_header= 2, )
 
-    time = dat[:, 0]
-    voltage = dat[:, 1]
+    time = dat[:,0]
+    voltage = dat[:,1]
     #for element in time:
     #     #parts=element.split(',')
     # time = tim.astype('Float64')
@@ -37,7 +37,9 @@ def read_in():
     # #for element in voltage:
     #     #parts1=element.split(',')
     # voltage = voltage.astyoe('Float64')
+    
     return time, voltage
+    
 
 
 

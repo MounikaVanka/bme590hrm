@@ -42,11 +42,11 @@ def main():
     for row in bpm_avg_hr: 
         threshold = checking_threshold(a, b, row)
         threshold1 = np.append(threshold1,threshold) 
-    return threshold    
+        
 
     # Writes to output file
-    write_to_file(bpm_inst_hr, bpm_avg_hr[0], threshold)
-    print(bpm_inst_hr,bpm_avg_hr[0],threshold)
-
+    write_to_file(bpm_inst_hr, bpm_avg_hr[0], threshold1)
+    print(bpm_inst_hr,bpm_avg_hr[0],threshold1)
+    
 if __name__ == '__main__':
     main()
