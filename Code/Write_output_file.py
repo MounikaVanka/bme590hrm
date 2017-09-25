@@ -13,7 +13,7 @@ def write_to_file(a, b, c):
     instantaneous_heart_rate = a
     avg_heart_rate = b
     threshold = c
-    print(instantaneous_heart_rate, '\n', avg_heart_rate, '\n', threshold)
+    print('Instantaneous Heart Rate is:',instantaneous_heart_rate,'\n','Average Heart Rate is:',avg_heart_rate, '\n','The threshold for each window is"',threshold)
     sys.stdout.close()
     sys.stdout = prev
 
