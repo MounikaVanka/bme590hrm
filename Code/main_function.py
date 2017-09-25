@@ -13,7 +13,7 @@ def main():
     2. The instantaneous heart rate
     3. Indication and time of bradycardia or tachycardia
     """
-    
+
     # Gets the input file named ecg_data.csv
     output = read_in()
     time = output[0]
@@ -23,8 +23,8 @@ def main():
     bpm_inst_hr = calc_inst_hr(time, voltage)
 
     # Calculates the Average Heart Rate
-    window = input("Enter the window time in seconds: ")
-    window = int(window)
+    window = input("Enter the window time in minutes: ")
+    window = int(window) * 60  # convert to seconds for calc
     bpm_avg_hr = calc_avg_hr(time, voltage, window)
 
     a = input("Enter the Bradycardia threshold: ")
@@ -34,11 +34,11 @@ def main():
     b = int(b)
 
     # loop here
-    
+
     # Checks the Threshold
- 
+
     threshold1 = np.array([])
-    for row in bpm_avg_hr: 
+    for row in bpm_avg_hr:
         threshold = checking_threshold(a, b, row)
         threshold1 = np.append(threshold1, threshold)
 
