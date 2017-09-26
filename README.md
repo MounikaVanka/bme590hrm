@@ -10,6 +10,11 @@ The Travis Badge is:
 =========
 [![Build Status](https://travis-ci.org/MounikaVanka/bme590hrm.svg?branch=master)](https://travis-ci.org/MounikaVanka/bme590hrm)
 
+Read the Docs Badge:
+=========
+[![Documentation Status](https://readthedocs.org/projects/bmehrmproject/badge/?version=latest)](http://bmehrmproject.readthedocs.io/en/latest/?badge=latest)
+
+
 Starting the Program
 =========
 The program may be started by running main_function.py in the Code folder. 
