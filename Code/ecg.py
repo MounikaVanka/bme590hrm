@@ -22,7 +22,7 @@ class ECG:
 
     def write_file(self):
         from Write_output_file import write_to_file
-        write_to_file(self.inst_HR, self.avg_hr[0], self.condition)
+        write_to_file(self.inst_hr, self.avg_hr[0], self.condition)
 
     def print_results(self):
         print('Instantaneous Heart Rate is:', self.inst_hr, '\n', 'Average Heart Rate is:', self.avg_hr[0], '\n',
