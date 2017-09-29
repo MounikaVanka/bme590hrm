@@ -10,12 +10,14 @@ Welcome to HRM-Sphinx's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-.. automodule:: clac_avg_hr
-.. automodule:: calc_inst_hr
-.. automodule:: input_csv_file
-.. automodule:: main_function
-.. automodule:: Checking_threshold
-.. automodule:: write_output_file
+   calc_avg_hr
+   calc_inst_hr
+   Input_csv_file
+   main_function
+   Checking_threshold
+   Write_output_file
+   test_hrm
+
 
 
 
