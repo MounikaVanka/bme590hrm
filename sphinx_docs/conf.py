@@ -98,6 +98,15 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Trial for Read the Docs with html
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "MounikaVanka", # Username
+    "github_repo": "bme590hrm", # Repo name
+    "github_version": "master", # Version
+    "conf_py_path": "/sphinx_docs", # Path in the checkout to the docs root
+}
+
 
 # -- Options for HTMLHelp output ------------------------------------------
 
