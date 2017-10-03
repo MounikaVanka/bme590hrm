@@ -104,7 +104,7 @@ html_context = {
     "github_user": "MounikaVanka", # Username
     "github_repo": "bme590hrm", # Repo name
     "github_version": "master", # Version
-    "conf_py_path": "/sphinx_docs", # Path in the checkout to the docs root
+    "conf_py_path": "/source/", # Path in the checkout to the docs root
 }
 
 
