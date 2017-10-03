@@ -12,7 +12,9 @@ The Travis Badge is:
 
 Read the Docs Badge:
 =========
-[![Documentation Status](https://readthedocs.org/projects/bmehrmproject/badge/?version=latest)](http://bmehrmproject.readthedocs.io/en/latest/?badge=latest)
+<a href='http://bmehrmproject.readthedocs.io/en/latest/?badge=latest'>
+    <img src='https://readthedocs.org/projects/bmehrmproject/badge/?version=latest' alt='Documentation Status' />
+</a>   
 
 
 Starting the Program
