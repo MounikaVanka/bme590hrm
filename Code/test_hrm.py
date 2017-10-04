@@ -19,6 +19,7 @@ def test_write_to_file():
     :Date: September 16, 2017
     :Notes: Ensures output file is formatted correctly.
     """
+    import split
     # assert output file is 3 lines and lines are as expected
     from Write_output_file import write_to_file
     write_to_file(60, 75, "normal")
