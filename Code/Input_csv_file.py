@@ -32,5 +32,5 @@ def read_in():
     #
     # #for element in voltage:
     #     #parts1=element.split(',')
-    # voltage = voltage.astype('Float64')    
+    # voltage = voltage.astype('Float64')
     return time, voltage
