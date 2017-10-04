@@ -23,7 +23,7 @@ def read_in():
     #         # time = numpy.append(time, time1)
     #         # voltage = numpy.append(voltage, voltage1)
     a = input('Enter the file name with extension')
-    dat = numpy.genfromtxt('ecg_data.csv', delimiter=',', skip_header=1, )
+    dat = numpy.genfromtxt(a, delimiter=',', skip_header=1, )
     time = dat[:, 0]
     voltage = dat[:, 1]
     # for element in time:
