@@ -1,4 +1,3 @@
-
 def test_read_in():
     """
     :Author: Tim Hoer
@@ -8,7 +7,7 @@ def test_read_in():
     # import script that reads
     import numpy
     from Input_csv_file import read_in
-    (time, voltage) = read_in()
+    (time, voltage) = read_in('ecg_data.csv')
     # check that lists are created
     assert(isinstance(time, numpy.ndarray) is True)
     assert (isinstance(voltage, numpy.ndarray) is True)
@@ -83,12 +82,12 @@ def test_calc_avg_hr():
         import wrapper.py
         # call relevant function with test case
         wrapper(test_case.txt)
-        # assert heart rate is reported accurately in output file for known case
+        # assert heart rate is reported accurately \
+          in output file for known case
         file = open(“output.txt”,“r”)
         assert(file.readline(1)=="60")
         assert(file.readline(2)=="60")
         assert(file.readline(3)=="N")
-
     def test_handling():
         """
         @author: Tim Hoer
