@@ -24,8 +24,7 @@ def test_write_to_file():
     write_to_file(60, 75, "normal")
     with open('output.txt') as f:
         lines = f.readlines()
-    lines = [x.strip() for x in lines]
-    assert(len(lines) == 3)
+    assert (len(lines.split('\n')) == 3)
     assert (lines[0] == "Instantaneous Heart Rate is: 60")
     assert (lines[1] == "Average Heart Rate is: 75")
     assert (lines[2] == "The condition for each window is normal")
