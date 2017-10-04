@@ -1,7 +1,6 @@
-import sys
-
 
 def write_to_file(a, b, c):
+    import sys
     """
     Writes the output to a separate file
     :param a: instantaneous heart rate
