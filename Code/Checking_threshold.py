@@ -1,6 +1,7 @@
 
 def checking_threshold(a, b, avg_heart_rate):
-    """checking for Tachycardia or Bradycardia
+    """
+    checking for Tachycardia or Bradycardia
     :param a: int variable, lower bound bpm
     :param b: int variable, upper bound bpm
     :param avg_heart_rate: array, bpm
@@ -24,5 +25,3 @@ def checking_threshold(a, b, avg_heart_rate):
 # b=int(input("Enter the Tachycardia Threshold"))
 # avg_heart_rate=72
 # Checking_Threshold(a,b,avg_heart_rate)
-
-
