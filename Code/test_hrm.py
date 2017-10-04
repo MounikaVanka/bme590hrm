@@ -7,7 +7,7 @@ def test_read_in():
     # import script that reads
     import numpy
     from Input_csv_file import read_in
-    (time, voltage) = read_in()
+    (time, voltage) = read_in('ecg_data.csv')
     # check that lists are created
     assert(isinstance(time, numpy.ndarray) is True)
     assert (isinstance(voltage, numpy.ndarray) is True)
