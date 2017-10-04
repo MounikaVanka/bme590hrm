@@ -2,13 +2,13 @@
 def read_in():
     import csv
     import numpy
-     """Opens the ecg CSV file
+     """
+     Opens the ecg CSV file
      :param readCSV: pointer to the file
      :param times: the time from the signal
      :param Voltage: the voltage from the signal
      """
-    # with open('ecg_data.csv') as csvfile:
-         
+    # with open('ecg_data.csv') as csvfile:         
     #
     #     read_csv = csv.reader(csvfile, delimiter=',')
     #     header_line = next(read_csv)
@@ -23,9 +23,7 @@ def read_in():
     #
     #         # time = numpy.append(time, time1)
     #         # voltage = numpy.append(voltage, voltage1)
-
-    dat = numpy.genfromtxt('ecg_data.csv', delimiter=',', skip_header= 1, )
-
+    dat = numpy.genfromtxt('ecg_data.csv', delimiter=',', skip_header=1, )
     time = dat[:, 0]
     voltage = dat[:, 1]
     # for element in time:
@@ -35,10 +33,5 @@ def read_in():
     #
     # #for element in voltage:
     #     #parts1=element.split(',')
-    # voltage = voltage.astyoe('Float64')
-    
+    # voltage = voltage.astyoe('Float64')    
     return time, voltage
-    
-
-
-
