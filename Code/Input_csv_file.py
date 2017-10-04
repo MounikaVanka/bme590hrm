@@ -1,5 +1,5 @@
 
-def read_in():
+def read_in(b):
     import csv
     import numpy
     """
@@ -22,7 +22,7 @@ def read_in():
     #
     #         # time = numpy.append(time, time1)
     #         # voltage = numpy.append(voltage, voltage1)
-    a = input('Enter the file name with extension')
+    a = b
     dat = numpy.genfromtxt(a, delimiter=',', skip_header=1, )
     time = dat[:, 0]
     voltage = dat[:, 1]
