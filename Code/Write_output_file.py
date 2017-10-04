@@ -1,5 +1,6 @@
 import sys
 
+
 def write_to_file(a, b, c):
     """
     Writes the output to a separate file
