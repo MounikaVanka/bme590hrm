@@ -23,6 +23,7 @@ def read_in(filename):
     #         # time = numpy.append(time, time1)
     #         # voltage = numpy.append(voltage, voltage1)
     dat = numpy.genfromtxt(filename, delimiter=',', skip_header=1, )
+
     time = dat[:, 0]
     voltage = dat[:, 1]
     # for element in time:
