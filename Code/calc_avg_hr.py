@@ -4,15 +4,16 @@ import scipy.signal
 
 def calc_avg_hr(time, voltage, window):
     """ calculate average HR from ECG data input
-
     :param time: numpy array, seconds
     :param voltage: numpy array, mV
     :param window: window size to search for avg heart rate, s
     :return: bmp: array of heart rates in window, bpm
     """
 
-    # indices = peakutils.indexes(voltage, thres = 0.95*np.max(voltage), min_dist = 1000)
-
+    """ indices = peakutils.indexes(voltage,
+                                    thres = 0.95*np.max(voltage),
+                                    min_dist = 1000)
+    """
     # get sample rate
     fs = 1 / (time[1] - time[0])
 
@@ -39,12 +40,14 @@ def calc_avg_hr(time, voltage, window):
         # if we're within one window, add the time to it
         if time[keep_peaks[i]] - time[keep_peaks[k]] <= window:
             wind = np.append(wind, time[i])
-        # if we're at the end of file or end of window, calculate average and reset
-        if i == np.size(keep_peaks) - 1 or time[keep_peaks[i]] - time[keep_peaks[k]] > window:
-            avg_in_window = int((np.size(wind) / (time[keep_peaks[i]] - time[keep_peaks[k]])) * 60)
+        # if at the end of file or end of window, calculate average and reset
+        if i == np.size(keep_peaks) - 1 or \
+           time[keep_peaks[i]] - time[keep_peaks[k]] > window:
+            avg_in_window = int((np.size(wind) / (time[keep_peaks[i]] -
+                                time[keep_peaks[k]])) * 60)
 
             bpm = np.append(bpm, avg_in_window)
-            bpm = np.ndarray.astype(bpm,int)
+            bpm = np.ndarray.astype(bpm, int)
             # reset for next window
             if i < np.size(keep_peaks) - 2:
                 k = i + 1
@@ -52,11 +55,10 @@ def calc_avg_hr(time, voltage, window):
 
     # num_beats = keep_peaks.size
     #
-    # time_elapsed = time[keep_peaks[num_beats-1]] - time[keep_peaks[0]]  # seconds
+    """ time_elapsed = time[keep_peaks[num_beats-1]] -
+                            time[keep_peaks[0]]  # seconds
+    """
     #
     # bpm = (num_beats / time_elapsed) * 60  # beats per minute
-    
+
     return bpm
-
-
-

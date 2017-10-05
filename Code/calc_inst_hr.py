@@ -10,7 +10,10 @@ def calc_inst_hr(time, voltage):
     :return: heart rate in bpm
     """
 
-    # indices = peakutils.indexes(voltage, thres = 0.95*np.max(voltage), min_dist = 1000)
+    """ indices = peakutils.indexes(voltage,
+                                    thres = 0.95*np.max(voltage),
+                                    min_dist = 1000)
+    """
 
     # get sampling rate
     fs = 1 / (time[1] - time[0])
@@ -28,10 +31,10 @@ def calc_inst_hr(time, voltage):
 
     keep_peaks = keep_peaks.astype(int)
 
-    # just take last two peaks to get instantaneous. not that accurate obviously
-    beat_diff = time[keep_peaks[1]] - time[keep_peaks[0]] # seconds per beat
-    bpm = int(1 / beat_diff * 60) # beats per minute
+    """ just take last two peaks to get instantaneous.
+    not that accurate obviously
+    """
+    beat_diff = time[keep_peaks[1]] - time[keep_peaks[0]]   # seconds per beat
+    bpm = int(1 / beat_diff * 60)    # beats per minute
 
     return bpm
-
-
