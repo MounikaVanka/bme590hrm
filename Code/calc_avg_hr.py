@@ -1,19 +1,14 @@
-import numpy as np
-import scipy.signal
-
-
 def calc_avg_hr(time, voltage, window):
     """ calculate average HR from ECG data input
+
     :param time: numpy array, seconds
     :param voltage: numpy array, mV
     :param window: window size to search for avg heart rate, s
-    :return: bmp: array of heart rates in window, bpm
+    :return: array of heart rates in window, bpm
     """
+    import numpy as np
+    import scipy.signal
 
-    """ indices = peakutils.indexes(voltage,
-                                    thres = 0.95*np.max(voltage),
-                                    min_dist = 1000)
-    """
     # get sample rate
     fs = 1 / (time[1] - time[0])
 

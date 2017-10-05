@@ -1,19 +1,18 @@
+def write_to_file(inst_hr, avg_hr, output):
+    """Writes the output to a separate file
 
-def write_to_file(filename, a, b, c):
+    :param inst_hr: int instantaneous heart rate
+    :param avg_hr: int avg_heart_rate
+    :param output: string output
+
+    """
     import sys
-    """
-    Writes the output to a separate file
-    :param a: instantaneous heart rate
-    :param b: avg_heart_rate
-    :param c: output string
-    """
     prev = sys.stdout
-    sys.stdout = open(filename, "w")
-    instantaneous_heart_rate = a
-    avg_heart_rate = b
-    threshold = c
-    print('Instantaneous Heart Rate is:', instantaneous_heart_rate)
-    print('Average Heart Rate is:', avg_heart_rate)
-    print('The condition for each window is', threshold)
+
+    sys.stdout = open("output.txt", "w")
+    print('Instantaneous Heart Rate is:', inst_hr)
+    print('Average Heart Rate is:', avg_hr)
+    print('The condition for each window is', output)
+    
     sys.stdout.close()
     sys.stdout = prev
