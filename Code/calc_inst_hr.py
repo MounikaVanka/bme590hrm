@@ -1,7 +1,3 @@
-import numpy as np
-import scipy.signal
-
-
 def calc_inst_hr(time, voltage):
     """ calculate instantaneous HR from ECG data input
 
@@ -9,11 +5,8 @@ def calc_inst_hr(time, voltage):
     :param voltage: numpy array, mV
     :return: heart rate in bpm
     """
-
-    """ indices = peakutils.indexes(voltage,
-                                    thres = 0.95*np.max(voltage),
-                                    min_dist = 1000)
-    """
+    import numpy as np
+    import scipy.signal
 
     # get sampling rate
     fs = 1 / (time[1] - time[0])

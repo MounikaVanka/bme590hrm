@@ -8,10 +8,11 @@ import numpy as np
 
 def main():
 
-    """main function will print the following to file
+    """ main function will print the following to file
     1. The avg heart rate
     2. The instantaneous heart rate
     3. Indication and time of bradycardia or tachycardia
+
     """
 
     # Gets the input file named ecg_data.csv
