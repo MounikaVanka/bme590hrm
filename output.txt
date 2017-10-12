@@ -1,6 +1,0 @@
-Instantaneous Heart Rate is: 60 
-
-Average Heart Rate is: 75 
-
-The condition for each window is normal 
-
