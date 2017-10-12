@@ -94,3 +94,18 @@ def test_calc_avg_hr():
     voltage = np.loadtxt('voltage60.txt', delimiter=',')
     output = calc_avg_hr(time, voltage, 60)
     assert(.9*62 < output[0] < 1.1*62)
+
+'''
+def test_all_cases():
+    """
+    :Author: Tim Hoer
+    :Date: September 16, 2017
+    :Notes: Tries all test cases.
+    """
+    from calc_avg_hr import calc_avg_hr
+    import numpy as np
+    time = np.loadtxt('time60.txt', delimiter=',')
+    voltage = np.loadtxt('voltage60.txt', delimiter=',')
+    output = calc_avg_hr(time, voltage, 60)
+    assert(.9*62 < output[0] < 1.1*62)
+'''
