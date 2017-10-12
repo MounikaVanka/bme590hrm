@@ -9,6 +9,7 @@ def test_initialization():
     assert(test.window == 20)
     assert(test.threshold == (40, 100))
 
+
 def test_class_write():
     """
     :Author: Tim Hoer
