@@ -9,6 +9,19 @@ def test_initialization():
     assert(test.window == 20)
     assert(test.threshold == (40, 100))
 
+def test_class_write():
+    """
+    :Author: Tim Hoer
+    :Date: September 16, 2017
+    :Notes: Ensures ECG class writes output file in correct output.
+    """
+    from ecg import ECG
+    import os
+    test = ECG(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100)
+    test.write_file()
+    assert(os.path.isfile('ecg_data1_out.txt'))
+    os.remove('ecg_data1_out.txt')
+
 
 def test_read_in():
     """

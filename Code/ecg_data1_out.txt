@@ -1,3 +1,0 @@
-Instantaneous Heart Rate is: 34
-Average Heart Rate is: 42
-The condition for each window is ['Normal Heart Rate' 'Normal Heart Rate' 'Normal Heart Rate']
