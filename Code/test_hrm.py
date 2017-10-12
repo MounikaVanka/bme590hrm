@@ -33,8 +33,8 @@ def test_write_to_file():
     """
     # assert output file is 3 lines and lines are as expected
     from Write_output_file import write_to_file
-    write_to_file(60, 75, "normal")
-    with open('output.txt') as f:
+    write_to_file('test_output.txt', 60, 75, "normal")
+    with open('test_output.txt') as f:
         lines = f.readlines()
     lines = [x.strip() for x in lines]
     assert(len(lines) == 3)
