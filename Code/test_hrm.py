@@ -95,17 +95,19 @@ def test_calc_avg_hr():
     output = calc_avg_hr(time, voltage, 60)
     assert(.9*62 < output[0] < 1.1*62)
 
-'''
+
 def test_all_cases():
     """
     :Author: Tim Hoer
     :Date: September 16, 2017
     :Notes: Tries all test cases.
     """
-    from calc_avg_hr import calc_avg_hr
-    import numpy as np
-    time = np.loadtxt('time60.txt', delimiter=',')
-    voltage = np.loadtxt('voltage60.txt', delimiter=',')
-    output = calc_avg_hr(time, voltage, 60)
-    assert(.9*62 < output[0] < 1.1*62)
-'''
+    import glob
+    from ecg import ECG
+    path = "../test_data/*.csv"
+    for fname in glob.glob(path):
+        print('Testing...', fname)
+        test = ECG(file=fname, window=20, brady_max=40, tachy_min=100)
+
+
+
