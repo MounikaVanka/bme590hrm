@@ -14,6 +14,5 @@ def write_to_file(output_filename, inst_hr, avg_hr, output):
     print('Instantaneous Heart Rate is:', inst_hr)
     print('Average Heart Rate is:', avg_hr)
     print('The condition for each window is', output)
-    
     sys.stdout.close()
     sys.stdout = prev
