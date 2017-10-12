@@ -1,4 +1,4 @@
-def classy_hrm(file='ecg_data.csv', window=20, brady_max=40, tachy_min=100):
+def classy_hrm(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100):
     """Main function to be used with class-based approach
 
     :param file: str, name of input csv file

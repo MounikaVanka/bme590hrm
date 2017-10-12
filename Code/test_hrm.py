@@ -1,3 +1,15 @@
+def test_initialization():
+    """
+    :Author: Tim Hoer
+    :Date: September 16, 2017
+    :Notes: Ensures ECG class initializes inputs correctly.
+    """
+    from ecg import ECG
+    test = ECG(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100)
+    assert(test.window == 20)
+    assert(test.threshold == (40, 100))
+
+
 def test_read_in():
     """
     :Author: Tim Hoer
@@ -69,32 +81,3 @@ def test_calc_avg_hr():
     voltage = np.loadtxt('voltage60.txt', delimiter=',')
     output = calc_avg_hr(time, voltage, 60)
     assert(.9*62 < output[0] < 1.1*62)
-
-
-'''
-    def test_case():
-        """
-        :Author: Tim Hoer
-        :Date: September 16, 2017
-        :Notes: Asserts that the output given a known input is as expected.
-        """
-        # import relevant scripts/functions
-        import wrapper.py
-        # call relevant function with test case
-        wrapper(test_case.txt)
-        # assert heart rate is reported accurately \
-          in output file for known case
-        file = open(“output.txt”,“r”)
-        assert(file.readline(1)=="60")
-        assert(file.readline(2)=="60")
-        assert(file.readline(3)=="N")
-    def test_handling():
-        """
-        @author: Tim Hoer
-        @date: September 16, 2017
-        @notes: Tests error handling
-        """
-        # assert program raises exception if input file is not "ecg_data.csv"
-        with pytest.raises(ZeroDivisionError):
-                wrapper.py('not_ecg_data.csv')
-'''
