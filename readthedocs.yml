@@ -1,5 +1,5 @@
 formats:
     - none
 conda:
-    file: environment.yml
+    file: ./environment/environment.yml
 
