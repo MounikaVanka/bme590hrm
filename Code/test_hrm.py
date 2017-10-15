@@ -52,9 +52,9 @@ def test_write_to_file():
         lines = f.readlines()
     lines = [x.strip() for x in lines]
     assert(len(lines) == 3)
-    assert (lines[0] == "Instantaneous Heart Rate is: 60")
-    assert (lines[1] == "Average Heart Rate is: 75")
-    assert (lines[2] == "The condition for each window is normal")
+    assert (lines[0] == "Instantaneous Heart Rate: 60")
+    assert (lines[1] == "Average Heart Rate: 75")
+    assert (lines[2] == "Condition: normal")
 
 
 def test_checking_threshold():
