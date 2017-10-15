@@ -14,4 +14,3 @@ def write_to_file(output_filename, inst_hr, avg_hr, output):
     file.write('Average Heart Rate is:', avg_hr)
     file.write('The condition for each window is', output)
     file.close()
-
