@@ -22,7 +22,16 @@ def read_in(filename):
     #
     #         # time = numpy.append(time, time1)
     #         # voltage = numpy.append(voltage, voltage1)
-    dat = numpy.genfromtxt(filename, delimiter=',', skip_header=1, )
+    dat = numpy.genfromtxt(filename, delimiter=',', skip_header=1)
+    length = len(dat)
+
+    # check data for bad values, reversed indexing for accurate removal
+    for count, reading in enumerate(reversed(dat)):
+        if numpy.isnan(reading[0]) or numpy.isnan(reading[1]):
+            print(reading[0], reading[1], count)
+            dat = numpy.delete(dat, length-count-1, 0)
+
+    # dat = filtered;
 
     time = dat[:, 0]
     voltage = dat[:, 1]

@@ -18,17 +18,20 @@ def calc_avg_hr(time, voltage, window):
     # get peaks.
     peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
-    max_val = np.amax(voltage)
+    avg_val = np.average(voltage)
+
+    std_dev = np.std(voltage)
 
     keep_peaks = np.array([])
     for index in peaks:
-        if voltage[index] >= 0.7 * max_val:
+        if voltage[index] >= avg_val + 1.2 * std_dev:
             keep_peaks = np.append(keep_peaks, index)
-
+    print(len(keep_peaks))
     keep_peaks = keep_peaks.astype(int)
 
     wind = np.array([])
     bpm = np.array([])
+
 
     k = 0  # for new window start index
     for i, ind in enumerate(keep_peaks):
