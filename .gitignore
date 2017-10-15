@@ -1,0 +1,7 @@
+*.DS_store
+
+*.pyc
+
+Code/__pycache__/
+sphinx_docs/_build/
+.idea/
