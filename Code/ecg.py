@@ -1,6 +1,8 @@
 class ECG:
     def __init__(self, file, window, brady_max, tachy_min):
-        """Initializes ECG class given input parameters.
+        """Initializes ECG class given input parameters. Performs analysis
+        on data in file to find heart condition, as well as instantaneous
+        and average heart rate in BPM.
 
         :param file: str, name of input csv file
         :param window: int, window size in seconds to divide signal into for diagnosis
