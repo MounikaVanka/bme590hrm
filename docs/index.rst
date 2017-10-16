@@ -10,8 +10,13 @@ Welcome to Sphinx's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
-This includes the modules for the Sphinx Documentation
+   calc_avg_hr
+   calc_inst_hr
+   Input_csv_file
+   main_function
+   Checking_threshold
+   Write_output_file
+   test_hrm
 
 
 
