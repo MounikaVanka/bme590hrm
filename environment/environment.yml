@@ -1,4 +1,6 @@
 name: hrm
+channels:
+        - cbetters
 dependencies:
         - numpy
         - csvkit
@@ -7,3 +9,4 @@ dependencies:
         - pytest-cov
         - pytest-pep8
         - scipy
+        - peakutils
