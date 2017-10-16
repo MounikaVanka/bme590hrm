@@ -7,6 +7,7 @@ def read_in(filename):
      """
     import csv
     import numpy
+    import warnings
 
     # with open('ecg_data.csv') as csvfile:
     #     read_csv = csv.reader(csvfile, delimiter=',')
@@ -31,7 +32,7 @@ def read_in(filename):
         if numpy.isnan(reading[0]) or numpy.isnan(reading[1]):
             dat = numpy.delete(dat, length-count-1, 0)
     if max(abs(dat[:, 1])) >= ekg_max:
-        raise ValueError('Data out of expected range, try again')
+        print('Warning: data in {0} out of expected range'.format(filename))
 
     # dat = filtered;
 
