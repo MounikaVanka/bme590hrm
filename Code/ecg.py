@@ -5,7 +5,7 @@ class ECG:
         and average heart rate in BPM.
 
         :param file: str, name of input csv file
-        :param window: int, window size in seconds to divide signal into for diagnosis
+        :param window: int, window size in seconds for diagnosis
         :param brady_max: int, upper threshold for bradycardia in BPM
         :param tachy_min: int, lower threshold for tachycardia in BPM
         :return: none

@@ -110,5 +110,3 @@ def test_all_cases():
         print('Testing...', fname)
         test = ECG(file=fname, window=20, brady_max=40, tachy_min=100)
 
-
-
