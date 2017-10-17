@@ -37,7 +37,7 @@ class ECG:
 
         :return: none
         """
-        from Write_output_file import write_to_file
+        from write_output_file import write_to_file
         output_file = self.input_file.split(".")[0] + "_out"
         output_file = '.'.join([output_file, 'txt'])
         write_to_file(output_file, self.inst_hr, self.avg_hr[0],
