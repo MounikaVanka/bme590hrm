@@ -2,6 +2,7 @@ name: hrm
 channels:
         - cbetters
 dependencies:
+        - python=3.5
         - numpy
         - csvkit
         - ipython
