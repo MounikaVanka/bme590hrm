@@ -1,8 +1,8 @@
-from Input_csv_file import *
+from input_csv_file import *
 from calc_avg_hr import *
 from calc_inst_hr import *
-from Checking_threshold import *
-from Write_output_file import *
+from checking_threshold import *
+from write_output_file import *
 import numpy as np
 
 
