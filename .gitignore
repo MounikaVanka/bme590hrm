@@ -3,5 +3,7 @@
 *.pyc
 
 Code/__pycache__/
-sphinx_docs/_build/
+
+_build/
 .idea/
+.cache/
