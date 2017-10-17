@@ -8,27 +8,37 @@ def calc_avg_hr(time, voltage, window):
     """
     import numpy as np
     import scipy.signal
+    import peakutils
 
     # get sample rate
     fs = 1 / (time[1] - time[0])
 
     # search width
-    rates = np.array([np.size(voltage)/200])
+    # rates = np.array([np.size(voltage)/200])
 
     # get peaks.
-    peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
+    # peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
-    max_val = np.amax(voltage)
+    # try using peakutils
+    kernel = np.ones(200) / 200
+    base = np.convolve(voltage, kernel, 'same')
+    voltage = voltage - base
+    peaks = peakutils.indexes(voltage, .73, int(np.size(voltage) / 200))
 
-    keep_peaks = np.array([])
-    for index in peaks:
-        if voltage[index] >= 0.7 * max_val:
-            keep_peaks = np.append(keep_peaks, index)
+    avg_val = np.average(voltage)
 
-    keep_peaks = keep_peaks.astype(int)
+    std_dev = np.std(voltage)
+
+    # keep_peaks = np.array([])
+    # for index in peaks:
+    #     if voltage[index] >= avg_val + 1.2 * std_dev:
+    #         keep_peaks = np.append(keep_peaks, index)
+    # keep_peaks = keep_peaks.astype(int)
 
     wind = np.array([])
     bpm = np.array([])
+
+    keep_peaks = peaks
 
     k = 0  # for new window start index
     for i, ind in enumerate(keep_peaks):
