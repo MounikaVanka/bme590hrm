@@ -1,7 +1,7 @@
-Input\_csv\_file module
+input\_csv\_file module
 =======================
 
-.. automodule:: Input_csv_file
+.. automodule:: input_csv_file
     :members:
     :undoc-members:
     :show-inheritance:

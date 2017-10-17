@@ -1,6 +1,0 @@
-name: ci-test
-dependencies:
-        - python=3.6
-        - numpy
-        - pytest
-
