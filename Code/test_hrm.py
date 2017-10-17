@@ -32,7 +32,7 @@ def test_read_in():
     """
     # import script that reads
     import numpy
-    from Input_csv_file import read_in
+    from input_csv_file import read_in
     (time, voltage) = read_in('ecg_data.csv')
     # check that lists are created
     assert(isinstance(time, numpy.ndarray) is True)
@@ -46,7 +46,7 @@ def test_write_to_file():
     :Notes: Ensures output file is formatted correctly.
     """
     # assert output file is 3 lines and lines are as expected
-    from Write_output_file import write_to_file
+    from write_output_file import write_to_file
     write_to_file('test_output.txt', 60, 75, "normal")
     with open('test_output.txt') as f:
         lines = f.readlines()
@@ -63,7 +63,7 @@ def test_checking_threshold():
     :Date: September 16, 2017
     :Notes: Tests for proper heart rate classification.
     """
-    from Checking_threshold import checking_threshold
+    from checking_threshold import checking_threshold
     assert(checking_threshold(60, 100, 72) == "Normal Heart Rate")
     assert (checking_threshold(60, 100, 55) == "Bradycardia")
     assert (checking_threshold(60, 100, 110) == "Tachycardia")

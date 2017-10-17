@@ -10,10 +10,10 @@ class ECG:
         :param tachy_min: int, lower threshold for tachycardia in BPM
         :return: none
         """
-        from Input_csv_file import read_in
+        from input_csv_file import read_in
         from calc_inst_hr import calc_inst_hr
         import numpy as np
-        from Checking_threshold import checking_threshold
+        from checking_threshold import checking_threshold
         from calc_avg_hr import calc_avg_hr
 
         self.input_file = file
@@ -37,7 +37,7 @@ class ECG:
 
         :return: none
         """
-        from Write_output_file import write_to_file
+        from write_output_file import write_to_file
         output_file = self.input_file.split(".")[0] + "_out"
         output_file = '.'.join([output_file, 'txt'])
         write_to_file(output_file, self.inst_hr, self.avg_hr[0],
