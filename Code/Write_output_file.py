@@ -8,11 +8,14 @@ def write_to_file(output_filename, inst_hr, avg_hr, output):
 
     """
     import sys
-    prev = sys.stdout
 
-    sys.stdout = open(output_filename, "w")
-    print('Instantaneous Heart Rate is:', inst_hr)
-    print('Average Heart Rate is:', avg_hr)
-    print('The condition for each window is', output)
-    sys.stdout.close()
-    sys.stdout = prev
+    file = open(output_filename, "w")
+    file.write('Instantaneous Heart Rate: ')
+    file.write(str(inst_hr))
+    file.write("\n")
+    file.write('Average Heart Rate: ')
+    file.write(str(avg_hr))
+    file.write("\n")
+    file.write('Condition: ')
+    file.write(str(output))
+    file.close()
