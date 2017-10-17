@@ -1,10 +1,10 @@
-.. BME590HRM documentation master file, created by
-   sphinx-quickstart on Thu Sep 28 15:58:50 2017.
+.. bme590hrm documentation master file, created by
+   sphinx-quickstart on Tue Oct 17 14:04:11 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to BME590HRM documentation!
-======================================
+Welcome to bme590hrm's documentation!
+=====================================
 
 .. toctree::
    :maxdepth: 2
@@ -12,13 +12,12 @@ Welcome to BME590HRM documentation!
 
    calc_avg_hr
    calc_inst_hr
-   Input_csv_file
+   checking_threshold
    classy_hrm
    ecg
-   main_function
-   Checking_threshold
-   Write_output_file
+   input_csv_file
    test_hrm
+   write_output_file
 
 
 
@@ -29,4 +28,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

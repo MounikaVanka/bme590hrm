@@ -4,13 +4,13 @@ Code
 .. toctree::
    :maxdepth: 4
 
-   Checking_threshold
-   Input_csv_file
-   Read_input
-   Write_output_file
    calc_avg_hr
    calc_inst_hr
+   checking_threshold
    classy_hrm
    ecg
+   input_csv_file
    main_function
+   read_input
    test_hrm
+   write_output_file
