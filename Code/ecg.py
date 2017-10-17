@@ -10,10 +10,10 @@ class ECG:
         :param tachy_min: int, lower threshold for tachycardia in BPM
         :return: none
         """
-        from Input_csv_file import read_in
+        from input_csv_file import read_in
         from calc_inst_hr import calc_inst_hr
         import numpy as np
-        from Checking_threshold import checking_threshold
+        from checking_threshold import checking_threshold
         from calc_avg_hr import calc_avg_hr
 
         self.input_file = file
