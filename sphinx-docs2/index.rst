@@ -1,9 +1,9 @@
-.. BME590-Sphinx documentation master file, created by
+.. BME590HRM documentation master file, created by
    sphinx-quickstart on Thu Sep 28 15:58:50 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to BME590-Sphinx's documentation!
+Welcome to BME590HRM documentation!
 ======================================
 
 .. toctree::
