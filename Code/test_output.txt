@@ -1,0 +1,3 @@
+Instantaneous Heart Rate: 60
+Average Heart Rate: 75
+Condition: normal

@@ -1,17 +1,20 @@
-from Input_csv_file import *
+from input_csv_file import *
 from calc_avg_hr import *
 from calc_inst_hr import *
-from Checking_threshold import *
-from Write_output_file import *
+from checking_threshold import *
+from write_output_file import *
 import numpy as np
 
 
 def main():
 
-    """main function will print the following to file
+    """ main function using module approach
+
+    will print the following to file
     1. The avg heart rate
     2. The instantaneous heart rate
     3. Indication and time of bradycardia or tachycardia
+
     """
 
     # Gets the input file named ecg_data.csv

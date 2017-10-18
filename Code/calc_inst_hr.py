@@ -1,7 +1,3 @@
-import numpy as np
-import scipy.signal
-
-
 def calc_inst_hr(time, voltage):
     """ calculate instantaneous HR from ECG data input
 
@@ -9,29 +5,45 @@ def calc_inst_hr(time, voltage):
     :param voltage: numpy array, mV
     :return: heart rate in bpm
     """
-
-    """ indices = peakutils.indexes(voltage,
-                                    thres = 0.95*np.max(voltage),
-                                    min_dist = 1000)
-    """
+    import numpy as np
+    import scipy.signal
+    # import matplotlib.pyplot as plt
+    import peakutils
 
     # get sampling rate
     fs = 1 / (time[1] - time[0])
 
     rates = np.array([np.size(voltage)/200])  # search width
     # find peaks
-    peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
+    # peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
-    max_val = np.amax(voltage)
+    # base = peakutils.baseline(voltage, 3, 1000)
+    # voltage = voltage - base
 
-    keep_peaks = np.array([])
-    for index in peaks:
-        if voltage[index] >= 0.7 * max_val:
-            keep_peaks = np.append(keep_peaks, index)
+    kernel = np.ones(200) / 200
+    base = np.convolve(voltage, kernel, 'same')
+    voltage = voltage - base
+    peaks = peakutils.indexes(voltage, .73, int(np.size(voltage)/200))
 
-    keep_peaks = keep_peaks.astype(int)
+    # avg_val = np.average(voltage)
+    # std_dev = np.std(voltage)
+    # keep_peaks = np.array([])
+    # for index in peaks:
+    #     if voltage[index] >= avg_val + 1.2 * std_dev:
+    #         keep_peaks = np.append(keep_peaks, index)
 
-    """ just take last two peaks to get instantaneous.
+    # print(avg_val)
+    # print(std_dev)
+    # print(len(peaks), len(keep_peaks))
+
+    # keep_peaks = keep_peaks.astype(int)
+    keep_peaks = peaks
+
+    # plt.plot(time, voltage)
+    # plt.plot(time[keep_peaks], voltage[keep_peaks], '.r')
+    # plt.show()
+
+    """ just take first two peaks to get instantaneous.
     not that accurate obviously
     """
     beat_diff = time[keep_peaks[1]] - time[keep_peaks[0]]   # seconds per beat

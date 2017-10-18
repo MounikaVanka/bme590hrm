@@ -1,0 +1,7 @@
+formats:
+    - none
+python:
+   version: 3.5
+conda:
+    file: ./environment/environment.yml
+

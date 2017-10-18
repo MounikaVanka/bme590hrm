@@ -1,3 +1,29 @@
+def test_initialization():
+    """
+    :Author: Tim Hoer
+    :Date: September 16, 2017
+    :Notes: Ensures ECG class initializes inputs correctly.
+    """
+    from ecg import ECG
+    test = ECG(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100)
+    assert(test.window == 20)
+    assert(test.threshold == (40, 100))
+
+
+def test_class_write():
+    """
+    :Author: Tim Hoer
+    :Date: September 16, 2017
+    :Notes: Ensures ECG class writes output file in correct output.
+    """
+    from ecg import ECG
+    import os
+    test = ECG(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100)
+    test.write_file()
+    assert(os.path.isfile('ecg_data1_out.txt'))
+    os.remove('ecg_data1_out.txt')
+
+
 def test_read_in():
     """
     :Author: Tim Hoer
@@ -6,7 +32,7 @@ def test_read_in():
     """
     # import script that reads
     import numpy
-    from Input_csv_file import read_in
+    from input_csv_file import read_in
     (time, voltage) = read_in('ecg_data.csv')
     # check that lists are created
     assert(isinstance(time, numpy.ndarray) is True)
@@ -20,15 +46,15 @@ def test_write_to_file():
     :Notes: Ensures output file is formatted correctly.
     """
     # assert output file is 3 lines and lines are as expected
-    from Write_output_file import write_to_file
-    write_to_file(60, 75, "normal")
-    with open('output.txt') as f:
+    from write_output_file import write_to_file
+    write_to_file('test_output.txt', 60, 75, "normal")
+    with open('test_output.txt') as f:
         lines = f.readlines()
     lines = [x.strip() for x in lines]
     assert(len(lines) == 3)
-    assert (lines[0] == "Instantaneous Heart Rate is: 60")
-    assert (lines[1] == "Average Heart Rate is: 75")
-    assert (lines[2] == "The condition for each window is normal")
+    assert (lines[0] == "Instantaneous Heart Rate: 60")
+    assert (lines[1] == "Average Heart Rate: 75")
+    assert (lines[2] == "Condition: normal")
 
 
 def test_checking_threshold():
@@ -37,7 +63,7 @@ def test_checking_threshold():
     :Date: September 16, 2017
     :Notes: Tests for proper heart rate classification.
     """
-    from Checking_threshold import checking_threshold
+    from checking_threshold import checking_threshold
     assert(checking_threshold(60, 100, 72) == "Normal Heart Rate")
     assert (checking_threshold(60, 100, 55) == "Bradycardia")
     assert (checking_threshold(60, 100, 110) == "Tachycardia")
@@ -71,30 +97,16 @@ def test_calc_avg_hr():
     assert(.9*62 < output[0] < 1.1*62)
 
 
-'''
-    def test_case():
-        """
-        :Author: Tim Hoer
-        :Date: September 16, 2017
-        :Notes: Asserts that the output given a known input is as expected.
-        """
-        # import relevant scripts/functions
-        import wrapper.py
-        # call relevant function with test case
-        wrapper(test_case.txt)
-        # assert heart rate is reported accurately \
-          in output file for known case
-        file = open(“output.txt”,“r”)
-        assert(file.readline(1)=="60")
-        assert(file.readline(2)=="60")
-        assert(file.readline(3)=="N")
-    def test_handling():
-        """
-        @author: Tim Hoer
-        @date: September 16, 2017
-        @notes: Tests error handling
-        """
-        # assert program raises exception if input file is not "ecg_data.csv"
-        with pytest.raises(ZeroDivisionError):
-                wrapper.py('not_ecg_data.csv')
-'''
+def test_all_cases():
+    """
+    :Author: Tim Hoer
+    :Date: September 16, 2017
+    :Notes: Tries all test cases.
+    """
+    import glob
+    from ecg import ECG
+    path = "../test_data/*.csv"
+    for fname in glob.glob(path):
+        print('Testing...', fname)
+        test = ECG(file=fname, window=20, brady_max=40, tachy_min=100)
+

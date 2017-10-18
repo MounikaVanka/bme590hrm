@@ -19,20 +19,21 @@ Read the Docs Badge:
 
 Starting the Program
 =========
-The program may be started by running main_function.py in the Code folder. 
+The program may be started by running classy_hrm.py in the Code folder or by importing the classy_hrm() function.
 
 Requirements:
 =========
 Python 3.6
 
-The inputs required from the user are:
-1. ECG data file in .csv format in a file named 'ecg_data.csv' in the Code folder with the time and Voltage in numerical format
-2. The HR threshold in bpm for bradycardia and tachycardia
-3. The sample window in minutes for which the average heart rate is to be estimated
+Input parameters:
+1. Filename for ECG data .csv file with time and voltage in numerical format
+2. Sample window in seconds for which the average heart rate is to be estimated
+3. HR threshold in bpm for bradycardia
+4. HR threshold in bpm for and tachycardia
 
 Output
 =========
-The output is printed to output.txt with the instantaneous HR on the first line, average HR on the second line, and ECG condition on the third line.
+The output is printed to (filename)_out.txt with the instantaneous HR on the first line, average HR on the second line, and ECG condition on the third line.
 
 The output instantaneous HR will be reported from the first RR interval in the input data.
 

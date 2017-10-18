@@ -1,7 +1,7 @@
-Checking\_threshold module
+write\_output\_file module
 ==========================
 
-.. automodule:: Checking_threshold
+.. automodule:: write_output_file
     :members:
     :undoc-members:
     :show-inheritance:
