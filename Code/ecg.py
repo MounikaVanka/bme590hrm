@@ -1,5 +1,5 @@
 class ECG:
-    def __init__(self, file, window, brady_max, tachy_min):
+    def __init__(self, *args):
         """Initializes ECG class given input parameters. Performs analysis
         on data in file to find heart condition, as well as instantaneous
         and average heart rate in BPM.
@@ -10,26 +10,47 @@ class ECG:
         :param tachy_min: int, lower threshold for tachycardia in BPM
         :return: none
         """
-        from input_csv_file import read_in
         from calc_inst_hr import calc_inst_hr
         import numpy as np
         from checking_threshold import checking_threshold
         from calc_avg_hr import calc_avg_hr
 
-        self.input_file = file
-        self.window = window
-        self.threshold = (brady_max, tachy_min)
-        (self.time, self.voltage) = read_in(self.input_file)
-
-        self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
-        self.inst_hr = calc_inst_hr(self.time, self.voltage)
-
-        window_states = np.array([])
-        for row in self.avg_hr:
-            window = checking_threshold(self.threshold[0], self.threshold[1],
+        if len(args) == 2:
+            time, voltage = args
+            self.time = time
+            self.voltage = voltage
+            self.inst_hr = calc_inst_hr(self.time, self.voltage)
+        elif len(args) == 3:
+            window, time, voltage = args
+            self.window = window
+            self.time = time
+            self.voltage = voltage
+            self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
+            window_states = np.array([])
+            for row in self.avg_hr:
+                window = checking_threshold(self.threshold[0], self.threshold[1],
                                         row)
-            window_states = np.append(window_states, window)
-        self.condition = window_states
+                window_states = np.append(window_states, window)
+            self.condition = window_states
+        elif len(args) == 4:
+            file, window, brady_max, tachy_min = arg
+            self.inst_hr = calc_inst_hr(self.time, self.voltage)
+            from input_csv_file import read_in
+            self.input_file = file
+            self.window = window
+            self.threshold = (brady_max, tachy_min)
+            (self.time, self.voltage) = read_in(self.input_file)
+            self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
+            self.inst_hr = calc_inst_hr(self.time, self.voltage)
+            window_states = np.array([])
+            for row in self.avg_hr:
+                window = checking_threshold(self.threshold[0], self.threshold[1],
+                                        row)
+                window_states = np.append(window_states, window)
+            self.condition = window_states
+        else:
+            print "Unsupported number of arguments."
+
 
     def write_file(self):
         """ Writes ECG class data to file for heart condition and average and
