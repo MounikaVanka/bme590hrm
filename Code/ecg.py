@@ -59,7 +59,7 @@ class ECG:
         from write_output_file import write_to_file
         output_file = self.input_file.split(".")[0] + "_out"
         output_file = '.'.join([output_file, 'txt'])
-        write_to_file(output_file, self.inst_hr, self.avg_hr[0],
+        write_to_file(output_file, self.inst_hr, self.avg_hr,
                       self.condition)
 
     def print_results(self):
@@ -70,7 +70,7 @@ class ECG:
         :return: none
         """
         print('Instantaneous Heart Rate is:', self.inst_hr, '\n',
-              'Average Heart Rate is:', self.avg_hr[0], '\n',
+              'Average Heart Rate is:', self.avg_hr, '\n',
               'The condition for each window is', self.condition)
 
     def get_average(self):

@@ -46,7 +46,11 @@ def calc_inst_hr(time, voltage):
     bpm = np.zeros(len(keep_peaks)-1)
     for count, peak_ind in enumerate(keep_peaks):
         if count < len(keep_peaks)-1:
-            beat_diff = time[peak_ind + 1] - time[peak_ind]   # seconds per beat
-            bpm[count] = int(1 / beat_diff * 60)    # beats per minute
+            # seconds per beat
+            beat_diff = time[keep_peaks[count+1]] - time[keep_peaks[count]]
+            # beats per minute
+            bpm[count] = int(1 / beat_diff * 60)
+
+    bpm = np.ndarray.astype(bpm, int)
 
     return bpm
