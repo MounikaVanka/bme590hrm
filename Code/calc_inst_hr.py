@@ -3,10 +3,10 @@ def calc_inst_hr(time, voltage):
 
     :param time: numpy array, seconds
     :param voltage: numpy array, mV
-    :return: heart rate in bpm
+    :return: numpy array, heart rate between beats in bpm
     """
     import numpy as np
-    import scipy.signal
+    # import scipy.signal
     # import matplotlib.pyplot as plt
     import peakutils
 
@@ -43,10 +43,10 @@ def calc_inst_hr(time, voltage):
     # plt.plot(time[keep_peaks], voltage[keep_peaks], '.r')
     # plt.show()
 
-    """ just take first two peaks to get instantaneous.
-    not that accurate obviously
-    """
-    beat_diff = time[keep_peaks[1]] - time[keep_peaks[0]]   # seconds per beat
-    bpm = int(1 / beat_diff * 60)    # beats per minute
+    bpm = np.zeros(len(keep_peaks)-1)
+    for count, peak_ind in enumerate(keep_peaks):
+        if count < len(keep_peaks)-1:
+            beat_diff = time[peak_ind + 1] - time[peak_ind]   # seconds per beat
+            bpm[count] = int(1 / beat_diff * 60)    # beats per minute
 
     return bpm
