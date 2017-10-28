@@ -1,5 +1,5 @@
 class ECG:
-    def __init__(self, *args):
+    def __init__(self, **kwargs):
         """Initializes ECG class given input parameters. Performs analysis
         on data in file to find heart condition, as well as instantaneous
         and average heart rate in BPM.
@@ -15,16 +15,14 @@ class ECG:
         from checking_threshold import checking_threshold
         from calc_avg_hr import calc_avg_hr
 
-        if len(args) == 2:
-            time, voltage = args
-            self.time = time
-            self.voltage = voltage
+        if len(kwargs) == 2:
+            self.time = kwargs['time']
+            self.voltage = kwargs['voltage']
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
-        elif len(args) == 3:
-            window, time, voltage = args
-            self.window = window
-            self.time = time
-            self.voltage = voltage
+        elif len(kwargs) == 3:
+            self.window = kwargs['window']
+            self.time = kwargs['time']
+            self.voltage = kwargs['voltage']
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             window_states = np.array([])
             for row in self.avg_hr:
@@ -32,13 +30,11 @@ class ECG:
                                         row)
                 window_states = np.append(window_states, window)
             self.condition = window_states
-        elif len(args) == 4:
-            file, window, brady_max, tachy_min = arg
-            self.inst_hr = calc_inst_hr(self.time, self.voltage)
+        elif len(kwargs) == 4:
             from input_csv_file import read_in
-            self.input_file = file
-            self.window = window
-            self.threshold = (brady_max, tachy_min)
+            self.input_file = kwargs['file']
+            self.window = kwargs['window']
+            self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
             (self.time, self.voltage) = read_in(self.input_file)
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
@@ -49,7 +45,7 @@ class ECG:
                 window_states = np.append(window_states, window)
             self.condition = window_states
         else:
-            print "Unsupported number of arguments."
+            print("Unsupported number of arguments: ", len(kwargs))
 
 
     def write_file(self):
