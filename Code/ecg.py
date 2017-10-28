@@ -70,3 +70,22 @@ class ECG:
         print('Instantaneous Heart Rate is:', self.inst_hr, '\n',
               'Average Heart Rate is:', self.avg_hr[0], '\n',
               'The condition for each window is', self.condition)
+
+    def get_average(self):
+        """ Returns ECG averaging period, time interval vector, average heart
+        rate for each interval, and tachycardia and bradycardia annotations
+        for each interval
+
+        :return: dictionary containing keys averaging_period, time_interval,
+        average_heart_rate, tachycardia_annotations, bradycardia_annotations
+        """
+        return
+
+    def get_summary(self):
+        """ Returns ECG time vector, instantaneous heart rate for each time
+        interval, and tachycardia and bradycardia annotations for each interval
+
+        :return: dictionary containing keys time, instanteous_heart_rate,
+        tachycardia_annotations, bradycardia_annotations
+        """
+        return
