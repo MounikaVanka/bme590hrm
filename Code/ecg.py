@@ -26,12 +26,6 @@ class ECG:
             self.voltage = kwargs['voltage']
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
-            window_states = np.array([])
-            for row in self.avg_hr:
-                window = checking_threshold(self.threshold[0], self.threshold[1],
-                                        row)
-                window_states = np.append(window_states, window)
-            self.condition = window_states
         elif len(kwargs) == 4:
             from input_csv_file import read_in
             self.input_file = kwargs['file']
@@ -40,15 +34,20 @@ class ECG:
             (self.time, self.voltage) = read_in(self.input_file)
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
-            window_states = np.array([])
-            for row in self.avg_hr:
-                window = checking_threshold(self.threshold[0], self.threshold[1],
-                                        row)
-                window_states = np.append(window_states, window)
-            self.condition = window_states
-        else:
-            print("Unsupported number of arguments: ", len(kwargs))
 
+        if len(kwargs) == 2:
+            data = self.inst_hr
+        else:
+            data = self.avg_hr
+        tachy_states = np.array([])
+        brady_states = np.array([])
+        for row in data:
+            window = checking_threshold(self.threshold[0],
+                                        self.threshold[1], row)
+            brady_states = np.append(brady_states, window[0])
+            tachy_states = np.append(tachy_states, window[1])
+        self.brady_states = brady_states
+        self.tachy_states = tachy_states
 
     def write_file(self):
         """ Writes ECG class data to file for heart condition and average and
@@ -60,7 +59,7 @@ class ECG:
         output_file = self.input_file.split(".")[0] + "_out"
         output_file = '.'.join([output_file, 'txt'])
         write_to_file(output_file, self.inst_hr, self.avg_hr,
-                      self.condition)
+                      self.brady_states, self.tachy_states)
 
     def print_results(self):
         """ Prints ECG class data for heart condition and average and
@@ -71,7 +70,9 @@ class ECG:
         """
         print('Instantaneous Heart Rate is:', self.inst_hr, '\n',
               'Average Heart Rate is:', self.avg_hr, '\n',
-              'The condition for each window is', self.condition)
+              'Bradycardia Annotations:', self.brady_states, '\n'
+              'Tachycardia Annotations:', self.tachy_states, '\n'
+              )
 
     def get_average(self):
         """ Returns ECG averaging period, time interval vector, average heart

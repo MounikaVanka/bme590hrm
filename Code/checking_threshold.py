@@ -9,16 +9,19 @@ def checking_threshold(a, b, avg_heart_rate):
 
     # Checks if the the heart rate is lesser or greater than the threshold
     if avg_heart_rate <= a:
-        output = "Bradycardia"
-        return output
+        brady_state = True
+        tachy_state = False
+        return brady_state, tachy_state
 
     elif avg_heart_rate >= b:
-        output = "Tachycardia"
-        return output
+        brady_state = False
+        tachy_state = True
+        return brady_state, tachy_state
 
     else:
-        output = "Normal Heart Rate"
-        return output
+        brady_state = False
+        tachy_state = False
+        return brady_state, tachy_state
 
 # a=int(input("Enter the Bradycardia Threshold"))
 # b=int(input("Enter the Tachycardia Threshold"))
