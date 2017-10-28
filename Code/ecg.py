@@ -19,11 +19,13 @@ class ECG:
             self.time = kwargs['time']
             self.voltage = kwargs['voltage']
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
+            self.threshold = (120, 40)
         elif len(kwargs) == 3:
             self.window = kwargs['window']
             self.time = kwargs['time']
             self.voltage = kwargs['voltage']
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
+            self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
             window_states = np.array([])
             for row in self.avg_hr:
                 window = checking_threshold(self.threshold[0], self.threshold[1],

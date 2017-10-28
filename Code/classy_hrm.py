@@ -12,7 +12,8 @@ def classy_hrm(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100):
     """
     from ecg import ECG
 
-    data = ECG(file, window, brady_max, tachy_min)
+    data = ECG(file=file, window=window, brady_max=brady_max,
+               tachy_min=tachy_min)
     data.write_file()
     data.print_results()
 
