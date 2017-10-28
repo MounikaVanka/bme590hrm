@@ -39,8 +39,8 @@ class ECG:
             data = self.inst_hr
         else:
             data = self.avg_hr
-        tachy_states = np.array([])
-        brady_states = np.array([])
+        tachy_states = np.array([], dtype=bool)
+        brady_states = np.array([], dtype=bool)
         for row in data:
             window = checking_threshold(self.threshold[0],
                                         self.threshold[1], row)
