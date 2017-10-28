@@ -11,4 +11,3 @@ dependencies:
         - pytest-pep8
         - scipy
         - peakutils
-        - flask
