@@ -80,7 +80,8 @@ def test_calc_inst_hr():
     time = np.loadtxt('time10.txt', delimiter=',')
     voltage = np.loadtxt('voltage10.txt', delimiter=',')
     output = calc_inst_hr(time, voltage)
-    assert(.9*62 < output < 1.1*62)
+    assert(len(output) == 9)
+    assert(.9*62 < output[0] < 1.1*62)
 
 
 def test_calc_avg_hr():
@@ -94,6 +95,7 @@ def test_calc_avg_hr():
     time = np.loadtxt('time60.txt', delimiter=',')
     voltage = np.loadtxt('voltage60.txt', delimiter=',')
     output = calc_avg_hr(time, voltage, 60)
+    assert(len(output) == 1)
     assert(.9*62 < output[0] < 1.1*62)
 
 
