@@ -82,7 +82,13 @@ class ECG:
         :return: dictionary containing keys averaging_period, time_interval,
         average_heart_rate, tachycardia_annotations, bradycardia_annotations
         """
-        return
+        avg_period = {"averaging_period": 'self.window'}
+        time_interval = {"time_interval": 'self.time'}
+        avg_hr = {"avegare_heart_rate": 'self.avg_hr'}
+        brady_cardia = {"bradycardia_annotations": 'self.brady_states'}
+        tachy_cardia = {"tachycardia_annotations": 'self.tachy_states'}
+        output = [avg_period, time_interval, avg_hr, brady_cardia, tachy_cardia]
+        return output
 
     def get_summary(self):
         """ Returns ECG time vector, instantaneous heart rate for each time
@@ -91,4 +97,9 @@ class ECG:
         :return: dictionary containing keys time, instanteous_heart_rate,
         tachycardia_annotations, bradycardia_annotations
         """
-        return
+        time = {"time": 'self.time'}
+        inst_hr = {"instantaneous_heart_rate": 'self.inst_hr'}
+        tacy_cardia = {"tachycardia_annotations": 'self.tachy_states'}
+        brady_cardia = {"bradycardia_annotations": 'self.brady_states'}
+        output = [time, inst_hr, tacy_cardia, brady_cardia]
+        return output
