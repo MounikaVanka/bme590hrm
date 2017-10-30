@@ -20,7 +20,7 @@ def calc_inst_hr(time, voltage):
     # base = peakutils.baseline(voltage, 3, 1000)
     # voltage = voltage - base
 
-    kernel = np.ones(np.size(81)) / 200
+    kernel = np.ones(np.size(voltage)) / 200
     base = np.convolve(voltage, kernel, 'same')
     voltage = voltage - base
     peaks = peakutils.indexes(voltage, .73, int(np.size(voltage)/200))
