@@ -20,7 +20,7 @@ def calc_avg_hr(time, voltage, window):
     # peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
     # try using peakutils
-    kernel = np.ones(200) / 200
+    kernel = np.ones(np.size(voltage)) / 200
     base = np.convolve(voltage, kernel, 'same')
     voltage = voltage - base
     peaks = peakutils.indexes(voltage, .73, int(np.size(voltage) / 200))

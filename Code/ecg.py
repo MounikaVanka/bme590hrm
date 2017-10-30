@@ -25,12 +25,12 @@ class ECG:
             self.time = kwargs['time']
             self.voltage = kwargs['voltage']
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
-            self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
+            self.threshold = (120,40)
         elif len(kwargs) == 4:
             from input_csv_file import read_in
             self.input_file = kwargs['file']
             self.window = kwargs['window']
-            self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
+            self.threshold = (120,40)
             (self.time, self.voltage) = read_in(self.input_file)
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
@@ -82,12 +82,12 @@ class ECG:
         :return: dictionary containing keys averaging_period, time_interval,
         average_heart_rate, tachycardia_annotations, bradycardia_annotations
         """
-        avg_period = {"averaging_period": 'self.window'}
-        time_interval = {"time_interval": 'self.time'}
-        avg_hr = {"avegare_heart_rate": 'self.avg_hr'}
-        brady_cardia = {"bradycardia_annotations": 'self.brady_states'}
-        tachy_cardia = {"tachycardia_annotations": 'self.tachy_states'}
-        output = [avg_period, time_interval, avg_hr, brady_cardia, tachy_cardia]
+        import numpy as np
+        avg_period = self.window
+        avg_hr = np.ndarray.tolist(self.avg_hr)
+        brady_cardia = np.ndarray.tolist(self.brady_states)
+        tachy_cardia = np.ndarray.tolist(self.tachy_states)
+        output = {"average_heart_rate": avg_hr, "averaging _period": avg_period, "time_interval": self.                 time, "bradycardia_annotations": brady_cardia, "tachycardia_annotations": tachy_cardia                  }
         return output
 
     def get_summary(self):
@@ -97,9 +97,10 @@ class ECG:
         :return: dictionary containing keys time, instanteous_heart_rate,
         tachycardia_annotations, bradycardia_annotations
         """
-        time = {"time": 'self.time'}
-        inst_hr = {"instantaneous_heart_rate": 'self.inst_hr'}
-        tacy_cardia = {"tachycardia_annotations": 'self.tachy_states'}
-        brady_cardia = {"bradycardia_annotations": 'self.brady_states'}
-        output = [time, inst_hr, tacy_cardia, brady_cardia]
+        import numpy as np
+        inst_hr = np.ndarray.tolist(self.inst_hr)
+        tachy_annotations = np.ndarray.tolist(self.tachy_states)
+        brady_annotations = np.ndarray.tolist(self.brady_states)
+        output = {'time': [self.time], 'instantaneous_heart_rate': inst_hr, 'tachycardia_annotations': 
+                tachy_annotations, 'bradycardia_annotations': brady_annotations}
         return output
