@@ -31,7 +31,7 @@ class ECG:
             from input_csv_file import read_in
             self.input_file = kwargs['file_input']
             self.window = kwargs['window']
-            self.threshold = (kwargs['brady_min'], kwargs['tachy_max'])
+            self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
             [self.time, self.voltage] = read_in(self.input_file)
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
