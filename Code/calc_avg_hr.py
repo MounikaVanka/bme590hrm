@@ -7,7 +7,7 @@ def calc_avg_hr(time, voltage, window):
     :return: array of heart rates in window, bpm
     """
     import numpy as np
-    import scipy.signal
+    # import scipy.signal
     import peakutils
 
     # get sample rate
@@ -20,7 +20,7 @@ def calc_avg_hr(time, voltage, window):
     # peaks = scipy.signal.find_peaks_cwt(voltage, fs / rates)
 
     # try using peakutils
-    kernel = np.ones(np.size(voltage)) / 200
+    kernel = np.ones(200) / 200
     base = np.convolve(voltage, kernel, 'same')
     voltage = voltage - base
     peaks = peakutils.indexes(voltage, .73, int(np.size(voltage) / 200))
@@ -58,6 +58,17 @@ def calc_avg_hr(time, voltage, window):
                 k = i + 1
             wind = np.array([])
 
+    bpm_out = np.zeros(len(time))
+    bpm_ind = 0
+    for count, t in enumerate(time):
+        if t <= bpm_ind+1 * window and bpm_ind <= len(bpm) -1:
+            bpm_out[count] = bpm[bpm_ind]
+        else:
+            bpm_out[count] = bpm_out[count-1]
+            bpm_ind += 1
+
+    bpm_out = np.ndarray.astype(bpm_out, int)
+
     # num_beats = keep_peaks.size
     #
     """ time_elapsed = time[keep_peaks[num_beats-1]] -
@@ -66,4 +77,4 @@ def calc_avg_hr(time, voltage, window):
     #
     # bpm = (num_beats / time_elapsed) * 60  # beats per minute
 
-    return bpm
+    return bpm_out
