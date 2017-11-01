@@ -29,7 +29,7 @@ class ECG:
             self.threshold = (40, 120)
         elif len(kwargs) == 4:
             from input_csv_file import read_in
-            self.input_file = kwargs['file_input']
+            self.input_file = kwargs['file']
             self.window = kwargs['window']
             self.threshold = (kwargs['brady_max'], kwargs['tachy_min'])
             [self.time, self.voltage] = read_in(self.input_file)
