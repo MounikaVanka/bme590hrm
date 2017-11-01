@@ -47,14 +47,17 @@ def test_write_to_file():
     """
     # assert output file is 3 lines and lines are as expected
     from write_output_file import write_to_file
-    write_to_file('test_output.txt', 60, 75, "normal")
+    write_to_file('test_output.txt', 60, 75, "False", "False" )
     with open('test_output.txt') as f:
         lines = f.readlines()
     lines = [x.strip() for x in lines]
-    assert(len(lines) == 3)
+    assert(len(lines) == 4)
     assert (lines[0] == "Instantaneous Heart Rate: 60")
     assert (lines[1] == "Average Heart Rate: 75")
-    assert (lines[2] == "Condition: normal")
+    assert (lines[2] == "Bradycardia Annotations: False")
+    assert (lines[3] == "Tachycardia Annotations: False")
+
+
 
 
 def test_checking_threshold():
@@ -64,9 +67,9 @@ def test_checking_threshold():
     :Notes: Tests for proper heart rate classification.
     """
     from checking_threshold import checking_threshold
-    assert(checking_threshold(60, 100, 72) == "Normal Heart Rate")
-    assert (checking_threshold(60, 100, 55) == "Bradycardia")
-    assert (checking_threshold(60, 100, 110) == "Tachycardia")
+    assert(checking_threshold(60, 100, 72)[0] == False)
+    assert (checking_threshold(60, 100, 55)[0] == True)
+    assert (checking_threshold(60, 100, 110)[1] == True)
 
 
 def test_calc_inst_hr():
@@ -80,7 +83,7 @@ def test_calc_inst_hr():
     time = np.loadtxt('time10.txt', delimiter=',')
     voltage = np.loadtxt('voltage10.txt', delimiter=',')
     output = calc_inst_hr(time, voltage)
-    assert(len(output) == 9)
+    assert(len(output) == len(time))
     assert(.9*62 < output[0] < 1.1*62)
 
 
@@ -95,7 +98,7 @@ def test_calc_avg_hr():
     time = np.loadtxt('time60.txt', delimiter=',')
     voltage = np.loadtxt('voltage60.txt', delimiter=',')
     output = calc_avg_hr(time, voltage, 60)
-    assert(len(output) == 1)
+    assert(len(output) == len(time))
     assert(.9*62 < output[0] < 1.1*62)
 
 
