@@ -26,20 +26,19 @@ Requirements:
 Python 3.6
 
 Input parameters:
-1. Filename for ECG data .csv file with time and voltage in numerical format
-2. Sample window in seconds for which the average heart rate is to be estimated
-3. HR threshold in bpm for bradycardia
-4. HR threshold in bpm for and tachycardia
+1. file = filename for ECG data .csv file with time and voltage in numerical format
+2. window = Sample window in seconds for which the average heart rate is to be estimated
+3. brady_max = HR threshold in bpm for bradycardia
+4. tachy_min = HR threshold in bpm for and tachycardia
 
 Output
 =========
-The output is printed to (filename)_out.txt with the instantaneous HR on the first line, average HR on the second line, and ECG condition on the third line.
+The output is printed to (filename)_out.txt with the instantaneous HR on the first line, average HR on the second line, and ECG condition on the third line, with the latter two data sets calculated over the specified window.
 
-The output instantaneous HR will be reported from the first RR interval in the input data.
 
-The output average HR will be reported from the first user specified window in the input data. If the window is longer than the amount of data in ecg_data.csv, the output will be the average over all the available data.
+The output average heart rate data will be output in vectors equal to the length of the input time and voltage data vectors. If the specified window is longer than the amount of data in the input file, the output will be the average over all the available data.
 
-The ECG condition will be either Bradycardia, Tachycardia, or Normal Heart Rate. The condition will be indicated for every average heart rate window.
+The ECG conditions bradycardia and tachycardia are each indicated using a boolean vector.
 
 
 Unit Testing

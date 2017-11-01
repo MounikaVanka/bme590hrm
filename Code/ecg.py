@@ -4,7 +4,8 @@ class ECG:
         on data in file to find heart condition, as well as instantaneous
         and average heart rate in BPM.
 
-        :param file: str, name of input csv file
+        :param file: str, name of input csv file (optional, but must be provided with
+                    params window, brady_max, and tachy_max)
         :param window: int, window size in seconds for diagnosis
         :param brady_max: int, upper threshold for bradycardia in BPM
         :param tachy_min: int, lower threshold for tachycardia in BPM
@@ -25,12 +26,12 @@ class ECG:
             self.time = kwargs['time']
             self.voltage = kwargs['voltage']
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
-            self.threshold = (120,40)
+            self.threshold = (120, 40)
         elif len(kwargs) == 4:
             from input_csv_file import read_in
             self.input_file = kwargs['file']
             self.window = kwargs['window']
-            self.threshold = (120,40)
+            self.threshold = (kwargs['tachy_min'], kwargs['brady_max'])
             (self.time, self.voltage) = read_in(self.input_file)
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
@@ -63,8 +64,7 @@ class ECG:
 
     def print_results(self):
         """ Prints ECG class data for heart condition and average and
-        instantaneous heart
-        rate to output file.
+        instantaneous heart rate to output file.
 
         :return: none
         """
