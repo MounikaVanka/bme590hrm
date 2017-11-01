@@ -20,13 +20,13 @@ class ECG:
             self.time = kwargs['time']
             self.voltage = kwargs['voltage']
             self.inst_hr = calc_inst_hr(self.time, self.voltage)
-            self.threshold = (40,120)
+            self.threshold = (40, 120)
         elif len(kwargs) == 3:
             self.window = kwargs['window']
             self.time = kwargs['time']
             self.voltage = kwargs['voltage']
             self.avg_hr = calc_avg_hr(self.time, self.voltage, self.window)
-            self.threshold = (40,120)
+            self.threshold = (40, 120)
         elif len(kwargs) == 4:
             from input_csv_file import read_in
             self.input_file = kwargs['file_input']
@@ -88,8 +88,8 @@ class ECG:
         brady_cardia = np.ndarray.tolist(self.brady_states)
         tachy_cardia = np.ndarray.tolist(self.tachy_states)
         output = {"average_heart_rate": avg_hr, "bradycardia_annotations": brady_cardia, 
-                "avg_period": avg_period, "time_interval": np.ndarray.tolist(self.time), 
-                "tachycardia_annotations": tachy_cardia}
+                  "avg_period": avg_period, "time_interval": np.ndarray.tolist(self.time),
+                  "tachycardia_annotations": tachy_cardia}
         return output
 
     def get_summary(self):
@@ -104,6 +104,7 @@ class ECG:
         inst_hr = np.ndarray.tolist(self.inst_hr)
         tachy_annotations = np.ndarray.tolist(self.tachy_states)
         brady_annotations = np.ndarray.tolist(self.brady_states)
-        output = {'time': [self.time], 'instantaneous_heart_rate': inst_hr, 'tachycardia_annotations': tachy_annotations, 
-                'bradycardia_annotations': brady_annotations}
+        output = {'time': [self.time], 'instantaneous_heart_rate': inst_hr,
+                  'tachycardia_annotations': tachy_annotations,
+                  'bradycardia_annotations': brady_annotations}
         return output
