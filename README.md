@@ -33,31 +33,37 @@ Requirements:
 Python 3.6
 
 Input parameters:
-FOR INSTANTANEOUS HEART RATE:
-{ 
-    "time": [1, 2, 3, ...],
-    "voltage": [20, 1, 20, 14, ...]
-}
 
-FOR AVERAGE HEART RATE:
-{
-    "averaging_period": 20,
-    "time": [1, 2, 3, ...],
-    "voltage": [100, 60, 62, ...]
-}
+FOR INSTANTANEOUS HEART RATE: 
+
+{ <br />
+    "time": [1, 2, 3, ...],      
+    "voltage": [20, 1, 20, 14, ...]  
+} 
+
+FOR AVERAGE HEART RATE: 
+
+{ <br />
+    "averaging_period": 20, <br />
+    "time": [1, 2, 3, ...], <br />
+    "voltage": [100, 60, 62, ...]  <br />
+} <br />
   
 
 
 Output
 =========
 The output for the Instantaneous Heart Rate with the HR and Tachy and Brady cardia vectors is in the following form:
+
 { 
     "time": [1, 2, 3, ...],
     "instantaneous_heart_rate": [100, 60, 62, ...],
     "tachycardia_annotations": [true, false, true, ...],
     "bradycardia_annotations": [true, false, true, ...]
 }
+
 The output for the Average Heart Rate with the Avg HR, Brady and Tachcardia vectors is in the following form:
+
 { 
     "time": [1, 2, 3, ...],
     "averaging_period": 20,
