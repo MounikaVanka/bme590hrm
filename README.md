@@ -1,5 +1,5 @@
 # bme590hrm 
-Calculates the instantaneous heart rate, average heart rate, input time interval, and also indicates conditions like Bradycardia and Tachycardia for the window size selected.
+Calculates the instantaneous heart rate, average heart rate, input time interval, and also indicates conditions like Bradycardia and Tachycardia for the window size selected. <br />
 The output also includes the total number of requests made to the service.
 
 
