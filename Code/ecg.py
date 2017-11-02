@@ -89,8 +89,8 @@ class ECG:
         brady_cardia = np.ndarray.tolist(self.brady_states)
         tachy_cardia = np.ndarray.tolist(self.tachy_states)
         output = {"average_heart_rate": avg_hr, "bradycardia_annotations":
-                  brady_cardia, "avg_period": avg_period, "time_interval":
-                  time, "tachycardia_annotations":
+                  brady_cardia, "averaging_period": avg_period,
+                  "time_interval": time, "tachycardia_annotations":
                   tachy_cardia}
         return output
 

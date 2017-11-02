@@ -67,9 +67,9 @@ def test_checking_threshold():
     :Notes: Tests for proper heart rate classification.
     """
     from checking_threshold import checking_threshold
-    assert(checking_threshold(60, 100, 72)[0] == False)
-    assert (checking_threshold(60, 100, 55)[0] == True)
-    assert (checking_threshold(60, 100, 110)[1] == True)
+    assert(checking_threshold(60, 100, 72)[0] is False)
+    assert (checking_threshold(60, 100, 55)[0] is True)
+    assert (checking_threshold(60, 100, 110)[1] is True)
 
 
 def test_calc_inst_hr():
@@ -126,5 +126,12 @@ def test_web_methods():
     test = ECG(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100)
     average_out = test.get_average()
     summary_out = test.get_summary()
-    assert (len(summary_out) == 4)
-    assert(len(average_out) == 5)
+    assert ('time' in summary_out.keys())
+    assert ('instantaneous_heart_rate' in summary_out.keys())
+    assert ('tachycardia_annotations' in summary_out.keys())
+    assert ('bradycardia_annotations' in summary_out.keys())
+    assert ("average_heart_rate" in average_out.keys())
+    assert ("bradycardia_annotations" in average_out.keys())
+    assert ("averaging_period" in average_out.keys())
+    assert ("time_interval" in average_out.keys())
+    assert ("tachycardia_annotations" in average_out.keys())
