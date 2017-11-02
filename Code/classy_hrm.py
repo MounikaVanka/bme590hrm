@@ -1,4 +1,4 @@
-def classy_hrm(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100):
+def classy_hrm(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=120):
     """Creates ECG class given input parameters and performs analysis
         on data in file to find heart condition, as well as instantaneous
         and average heart rate in BPM. These results are printed to
@@ -12,7 +12,8 @@ def classy_hrm(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100):
     """
     from ecg import ECG
 
-    data = ECG(file, window, brady_max, tachy_min)
+    data = ECG(file=file, window=window, brady_max=brady_max,
+               tachy_min=tachy_min)
     data.write_file()
     data.print_results()
 
