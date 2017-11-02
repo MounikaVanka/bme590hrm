@@ -83,7 +83,7 @@ class ECG:
         average_heart_rate, tachycardia_annotations, bradycardia_annotations
         """
         import numpy as np
-        time = np.ndappend.tolist(self.time)
+        time = np.ndarray.tolist(self.time)
         avg_period = self.window
         avg_hr = np.ndarray.tolist(self.avg_hr)
         brady_cardia = np.ndarray.tolist(self.brady_states)
@@ -102,7 +102,7 @@ class ECG:
         tachycardia_annotations, bradycardia_annotations
         """
         import numpy as np
-        time = np.ndappend.tolist(self.time)
+        time = np.ndarray.tolist(self.time)
         inst_hr = np.ndarray.tolist(self.inst_hr)
         tachy_annotations = np.ndarray.tolist(self.tachy_states)
         brady_annotations = np.ndarray.tolist(self.brady_states)
