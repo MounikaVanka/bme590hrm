@@ -1,5 +1,6 @@
 # bme590hrm 
-Calculates the instantaneous heart rate, average heart rate and also indicates conditions like Bradycardia and Tachycardia. 
+Calculates the instantaneous heart rate, average heart rate, input time interval, and also indicates conditions like Bradycardia and Tachycardia for the window size selected.
+The output also includes the total number of requests made to the service.
 
 
 The Software License for the file is:
@@ -19,26 +20,52 @@ Read the Docs Badge:
 
 Starting the Program
 =========
-The program may be started by running classy_hrm.py in the Code folder or by importing the classy_hrm() function.
+The program may be started by posting the following inputs for Average Heart Rate and Instantaneous heart rate respectively on the web server:
+1. POST/api/heart_rate/summary
+2. POST/api/heart_rate/average
+3. GET/api/requests
+The address to the Virtual Machine requests is:
+http://vcm-1612.vm.duke.edu:5000/requests
+
 
 Requirements:
 =========
 Python 3.6
 
 Input parameters:
-1. file = filename for ECG data .csv file with time and voltage in numerical format
-2. window = Sample window in seconds for which the average heart rate is to be estimated
-3. brady_max = HR threshold in bpm for bradycardia
-4. tachy_min = HR threshold in bpm for and tachycardia
+FOR INSTANTANEOUS HEART RATE:
+{ 
+    "time": [1, 2, 3, ...],
+    "voltage": [20, 1, 20, 14, ...]
+}
+
+FOR AVERAGE HEART RATE:
+{
+    "averaging_period": 20,
+    "time": [1, 2, 3, ...],
+    "voltage": [100, 60, 62, ...]
+}
+  
+
 
 Output
 =========
-The output is printed to (filename)_out.txt with the instantaneous HR on the first line, average HR on the second line, and ECG condition on the third line, with the latter two data sets calculated over the specified window.
+The output for the Instantaneous Heart Rate with the HR and Tachy and Brady cardia vectors is in the following form:
+{ 
+    "time": [1, 2, 3, ...],
+    "instantaneous_heart_rate": [100, 60, 62, ...],
+    "tachycardia_annotations": [true, false, true, ...],
+    "bradycardia_annotations": [true, false, true, ...]
+}
+The output for the Average Heart Rate with the Avg HR, Brady and Tachcardia vectors is in the following form:
+{ 
+    "time": [1, 2, 3, ...],
+    "averaging_period": 20,
+    "instantaneous_heart_rate": [100, 60, 62, ...],
+    "tachycardia_annotations": [true, false, true, ...],
+    "bradycardia_annotations": [true, false, true, ...]
+}
 
-
-The output average heart rate data will be output in vectors equal to the length of the input time and voltage data vectors. If the specified window is longer than the amount of data in the input file, the output will be the average over all the available data.
-
-The ECG conditions bradycardia and tachycardia are each indicated using a boolean vector.
 
 
 Unit Testing
