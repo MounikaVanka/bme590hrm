@@ -23,7 +23,7 @@ Starting the Program
 The program may be started by posting the following inputs for Average Heart Rate and Instantaneous heart rate respectively on the web server:
 1. POST/api/heart_rate/summary
 2. POST/api/heart_rate/average
-3. GET/api/requests
+3. GET/api/requests <br />
 The address to the Virtual Machine requests is:
 http://vcm-1612.vm.duke.edu:5000/requests
 
