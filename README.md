@@ -55,22 +55,22 @@ Output
 =========
 The output for the Instantaneous Heart Rate with the HR and Tachy and Brady cardia vectors is in the following form:
 
-{ 
-    "time": [1, 2, 3, ...],
-    "instantaneous_heart_rate": [100, 60, 62, ...],
-    "tachycardia_annotations": [true, false, true, ...],
-    "bradycardia_annotations": [true, false, true, ...]
-}
+{ <br />
+    "time": [1, 2, 3, ...], <br />
+    "instantaneous_heart_rate": [100, 60, 62, ...], <br />
+    "tachycardia_annotations": [true, false, true, ...], <br />
+    "bradycardia_annotations": [true, false, true, ...] <br />
+} <br />
 
 The output for the Average Heart Rate with the Avg HR, Brady and Tachcardia vectors is in the following form:
 
-{ 
-    "time": [1, 2, 3, ...],
-    "averaging_period": 20,
-    "instantaneous_heart_rate": [100, 60, 62, ...],
-    "tachycardia_annotations": [true, false, true, ...],
-    "bradycardia_annotations": [true, false, true, ...]
-}
+{ <br />
+    "time": [1, 2, 3, ...], <br />
+    "averaging_period": 20, <br />
+    "instantaneous_heart_rate": [100, 60, 62, ...], <br />
+    "tachycardia_annotations": [true, false, true, ...], <br />
+    "bradycardia_annotations": [true, false, true, ...] <br />
+} <br />
 
 
 
