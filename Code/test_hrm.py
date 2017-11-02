@@ -115,3 +115,16 @@ def test_all_cases():
         print('Testing...', fname)
         test = ECG(file=fname, window=20, brady_max=40, tachy_min=100)
 
+
+def test_web_methods():
+    """
+    :Author: Tim Hoer
+    :Date: November 2, 2017
+    :Notes: Tests ECG class methods used for web services.
+    """
+    from ecg import ECG
+    test = ECG(file='ecg_data1.csv', window=20, brady_max=40, tachy_min=100)
+    average_out = test.get_average()
+    summary_out = test.get_summary()
+    assert (len(summary_out) == 4)
+    assert(len(average_out) == 5)

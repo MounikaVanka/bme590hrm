@@ -52,7 +52,7 @@ def calc_inst_hr(time, voltage):
                         t <= time[keep_peaks[curr_keep_ind]]:
 
             beat_diff = time[keep_peaks[curr_keep_ind + 1]] -\
-                        time[[keep_peaks[curr_keep_ind]]]
+                        time[keep_peaks[curr_keep_ind]]
             bpm[count] = int(1/beat_diff * 60)
 
         # if after last peak time, make bpm 0
